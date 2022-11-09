@@ -56,7 +56,11 @@ struct  ContentView: View {
         VStack{
             let b = Board()
             let ch = b.room1.characters
-            if let c = ch[0]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
+            if let c = ch[0]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
             Button("<Back"){
                 page = 0
             }
@@ -67,9 +71,21 @@ struct  ContentView: View {
         VStack{
           let b = Board()
           let ch = b.room2.characters
-            if let c = ch[0]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-            if let c = ch[1]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-            if let c = ch[2]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
+            if let c = ch[0]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
+            if let c = ch[1]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
+            if let c = ch[2]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
             Button("<Back"){
                 page = 0
             }
@@ -81,8 +97,16 @@ struct  ContentView: View {
         VStack{
             let b = Board()
             let ch = b.room3.characters
-            if let c = ch[0]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-            if let c = ch[1]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
+            if let c = ch[0]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
+            if let c = ch[1]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
             Button("<Back"){
                 page = 0
             }
@@ -94,9 +118,21 @@ struct  ContentView: View {
         VStack{
            let b = Board() //gonna nee
             let ch = b.room4.characters
-            if let c = ch[0]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-            if let c = ch[1]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-            if let c = ch[2]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
+            if let c = ch[0]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
+            if let c = ch[1]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
+            if let c = ch[2]{Button(action: {
+                print("\(c.name) pressed")
+            }) {
+                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
+            }}
             Button("<Back"){
                 page = 0
             }
