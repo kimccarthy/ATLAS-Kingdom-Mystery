@@ -66,7 +66,7 @@ struct  ContentView: View {
     var room2: some View{
         VStack{
           let b = Board()
-          var ch = b.room2.characters
+          let ch = b.room2.characters
             if let c = ch[0]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
             if let c = ch[1]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
             if let c = ch[2]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
@@ -79,8 +79,8 @@ struct  ContentView: View {
     
     var room3: some View{
         VStack{
-            var b = Board()
-            var ch = b.room3.characters
+            let b = Board()
+            let ch = b.room3.characters
             if let c = ch[0]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
             if let c = ch[1]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
             Button("<Back"){
@@ -92,8 +92,8 @@ struct  ContentView: View {
     
     var room4: some View{
         VStack{
-           var b = Board() //gonna nee
-            var ch = b.room4.characters
+           let b = Board() //gonna nee
+            let ch = b.room4.characters
             if let c = ch[0]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
             if let c = ch[1]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
             if let c = ch[2]{Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
