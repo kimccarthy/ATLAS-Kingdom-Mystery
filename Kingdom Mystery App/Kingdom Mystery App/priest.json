@@ -1,0 +1,23 @@
+{
+    "name": "Priest",
+    "img": "dog-asleep",
+    "img2": "dog-awake",
+    "intro": ["Hey brother! What's up?"],
+    "initial": ["...hgnh is...is that...","CARAMEL CAKE CRISP!!!", "Can I have it please please pl-", "Oh-hi! I don't believe we've met. I'm D- Oh.","Right. I'm a priest now. I'm supposed to have people call me Father. It feels so...formal though", "How about you call me Brother instead! Feels less formal.", "Say, where is everyone?", "...", "Three Kingdoms? Walls? How long was I out for?", "FIVE YEARS?? HOW??", "God da- WAIT", "I can't swear. That's alright I can just ask forgiveness from the Statue of Our Lady of the Mou-", "...", "WHERE'S THE STATUE???", "Behind me! There's supposed to be a statue! It's gone!!", "Noooo nonononono this is bad. Can you help me find it, brother?","You can? Thank you thank you thank you!!"],
+    "crown":[],
+    "diamond":[],
+    "vaultNote":[],
+    "redBerries":[],
+    "greenBerries":[],
+    "disguising":[],
+    "priest":[],
+    "invoice":[],
+    "potion":[],
+    "recipe":[],
+    "caves":[],
+    "statueMissing": ["Please find the statue!! Ohhhh man that Blacksmith is going to be furious…He already didn’t trust me...I can’t believe I slept through it…"],
+    "statueSold": ["It was sold to someone?? Ohhhhh this is bad. This is very bad. Please find it, quick!"],
+    "statue": ["Oh thank stars! You found it!!","I’m not going to lie brother, I don’t know that I should be left in control of it anymore.","I think it’s better if you find a different home for it."],
+    "chest": ["The statue revealed a chest?? What?? That’s crazy. Do you know how to open it?","No? That’s OK!","Good luck brother, I believe in you!”"],
+    "letters": ["Wow, those are some letters huh! They look personal, where’d you get these?","The chest? Oh nice, so you got it open?", "Nice work, brother!"]
+}

@@ -1,0 +1,24 @@
+{
+    "name": "Artist",
+    "img": "penguin",
+    "img2": "",
+    "intro": ["Blessed day to you, Traveller. How might I assist thee in thy journeys?"],
+    "initial":["Avast! What doth my eyes see but a new face!", "Hark! It hath been ages! I am the great artist Pinguino, first of my name. Welcome to Sliavh!", "I'm sure you've heard the tale of woe of the shattering of the kingdoms. A tragedy for sure.", "I'm sure you're wondering why I am in such a blue world. I used to get my other colors of paint from other parts of the kingdom. But now they hath been severed", "A pity really. Regardless, I am always here to lend an ear to you, good lad."],
+    "crown":[],
+    "diamond":["The Diamond? The Diamond! O woe is the tale of the Diamond! The scallywags of Foroise turned the blame to us! Vile, I tell you. Vile!","That night, I was in my own studio. I was hit by inspiration for my great masterpiece! A pity I couldn’t finish it before the walls went up.","I need Foroisian and Lochan berries for paint. Without it, I am left in a hell painted blue. A beautiful color, but not when I’ve been cooped like a flightless bird in a sea!"],
+    "vaultNote": ["This script…it’s the script of the criminal! God forbid! Vile!","I can’t say I recognize it, my lad. My apologies.","Please swiftly bring this criminal to justice!"],
+    "redBerries": ["My god…doth mine eyes deceive me?! Are those...Lochan berries??","You’re a savior! A god send! Huzzah! Thank you, lad. Now I can add red to this array of color."],
+    "greenBerries": ["My god…doth mine eyes deceive me?! Are those…Foroisian berries??","You’re a savior! A god send! Huzzah! Thank you, lad. Now I can add green to this array of color."],
+    "disguising": ["A Lochan disguise you say? Hm… I’ve never been much of a tailor…","But I am, Pinguino the Artist, first of his name, and I have NEVER backed down from a challenge! Wait here my lad!","...","Here we are! A masterpiece! A fine piece of work if I do say so myself!"],
+    "priest": ["Ah the Forosian priest you say? A poor lad, knowing naught about the situation we will awaken into."],
+    "invoice": ["What is this? Appears to be an invoice for the blacksmith. A fellow master of his trade!","How much is he getting paid? 300 GOLD?? For a SWORD??","Blasphemy. I can’t imagine getting paid that much for your craft."],
+    "potion":[],
+    "recipe": ["A recipe? I can’t say I know much about cooking, lad."],
+    "caves": ["The Caves of Foroise? Ah, the great Pyrostones! Their colors dancing in the wind! A true work of natural beauty! They hide a secret within their wonder. When sealing the cave, I tried to make a useful mnemonic - The secret to the pyrostones lies in their colors, in the PYRO."],
+    "statueMissing":["Ah the beauty of the statue on the mountains. I remember making pilgrimage before it was moved to the Forosian church for safe keeping.","It’s missing??","A pity. It truly is a sight to behold. I hope you find it, my good lad."],
+    "statueSold": ["The statue was sold?? Can you put a price point on such a masterpiece?? For shame! For shame! Find it please!"],
+    "statue": ["You found it! Oh glorious day! It used to reside on the mountains, might I suggest returning it to its rightful pedestal?"],
+    "chest": ["A chest in the mountains? Oh wonderful, a mystery","I’m afraid I’m not much help in opening it, but I’m intrigued now!"],
+    "letters": ["Ohhhh young love! What beauty, what grace! There is no greater inspiration! Brava to whoever composed these!"]
+    
+}

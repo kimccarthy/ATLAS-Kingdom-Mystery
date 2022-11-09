@@ -1,0 +1,24 @@
+{
+    "name": "Hero",
+    "img": "tiger",
+    "img2": "",
+    "intro": ["Good day, Traveller. May I help you?"],
+    "initial":["A Traveller in Lochan? My are you a sight for sore eyes.", "Hello. My name is Tigros. I was once a loyal knight of King Aleold, but in the past few years there hasn't been much of a need for an army.", "Feel free to stop by at any time. It's been ages since anyone here has had visitors."],
+    "crown":["My stars, that’s a crown of Lochan! Where did you find this, Traveler?","It contains the red gems of the royal family. One must’ve lost it!"],
+    "diamond":["What do I know about the Diamond of Lochan? Ah, a mystery for the ages. All of the sects of the kingdom were peaceful, I do not know why another monarch would steal the gem. It was precious, yes, but it would obviously anger King Aleod.","I was here, that fateful night, taking care of the Elder. I never knew that I would wake up the next morn to be split off from the other two-thirds of the kingdom.","The walls went up quickly after. Now we are but a small kingdom."],
+    "vaultNote": ["This was in the vault? Where the Diamond once stood? Excellent find, Traveler! This will surely help you identify which kingdom stole the gem!"],
+    "redBerries":[],
+    "greenBerries":[],
+    "disguising":["Traveller, why are you asking about disguises? Are you planning to sneak someone into somewhere they shouldn’t be?"],
+    "priest":["The Priest in Foroise? Oh poor lad, is he still meditating? I think he’s probably been out of it since the Shattering. I wonder if he even knows it happened.","Had he been awake, he likely would’ve been taken under Lochan’s wing. He grew up here.","But no one dared move him while he was meditating, so in Foroise he remains."],
+    "invoice":["Oh, this is a request I wrote up for an order from the blacksmith. That is, back when we had a blacksmith. I don’t know where you found this, I believe it was tossed in my trash years ago.","The blacksmith was a friend of mine. He was a staple of our town, and I was at his store almost daily. However, in the Shattering he was forced to return to Sliavh.","Say, Traveler, since you can move between the kingdoms freely, could you tell him that Tigros says hello?"],
+    "potion":[],
+    "recipe":["Is this a recipe? I can’t say I’ve seen this before."],
+    "caves":["Caves in Foroise? It’s been ages since I’ve been, I’m afraid I’m no help."],
+    "statueMissing":["The Statue of the Mountains was stolen?! By whom?? This is an outrage. I will keep my eyes peeled, Traveler. I can’t say I’ve seen it, but I have no sympathy for those who would steal something with religious significance like that."],
+    "statueSold":["The thief stole and sold the monument? I am disappointed, but not surprised. It’s in his nature. I have yet to see it, but will alert you the second I do. Good luck, Traveler."],
+    "statue":["You found the statue? Huzzah! Excellent work!","It was with the Alchemist of Foroise?","...I see. She’s a friend of mine. A girl with a massive heart, if a bit naive. I doubt she recognized it when she bought it from the thief."],
+    "chest":["There was a chest under the statue? That’s odd. I knew the statue used to live in the mountains, but I didn’t realize it held a vault."],
+    "letters":["These letters. How did you open the chest?","I mean-","There was something else in the chest, wasn’t there.","Please, I am begging you, do not implicate her in this. She did not do this.","As a favor, I ask for your discretion. And I will be taking these letters."]
+    
+}

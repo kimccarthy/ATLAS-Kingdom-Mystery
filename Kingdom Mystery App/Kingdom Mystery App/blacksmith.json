@@ -1,0 +1,24 @@
+{
+    "name": "Blacksmith",
+    "img": "eagle",
+    "img2": "eagle-disguised",
+    "intro": ["Hello! How may I help you?"],
+    "initial": ["A Traveller? My stars, it's been ages. Greetings. I'm a blacksmith by trade, although I can't say I have much to show for it right now.","I'm always happy to lend an ear or provide what help I can. Welcome to Sliavh."],
+    "crown":[],
+    "diamond":["Ahhh the Diamond of Lochan. It’s a shame, it was a work of beauty. And those pesky Foroisans have the audacity to push the blame onto us. Our lovely Queen would never tolerate such a thing. Besides, who would agree to steal that?", "Where was I? Well funnily enough, I was living in Lochan at the time. I used to work there. I was pulling a long night, but was so invested in my work that I didn’t notice anything outside.","I live in Sliavh though, and when the walls went up I had to stay back here. Not much of a blacksmith anymore without my tools."],
+    "vaultNote": ["This was in the vault? Odd. I’ve never seen this before. I wonder why I haven’t heard of this."],
+    "redBerries":[],
+    "greenBerries":[],
+    "disguising":["If you can get me a disguise, maybe I can sneak back into Lochan. I know it’s a big ask, but if my work is needed then I must return!"],
+    "priest":["The Forosian Priest? I’ve met him, but never was close with him. I’ve heard he’s been meditating for years."],
+    "invoice": ["Oh I recognize this. This is from Tigros, in Lochan. He used to be one of my finest customers. He was always around, and I would’ve counted him among friends.", "Where did you get this though?"],
+    "potion":[],
+    "recipe":["Sorry, I don’t believe I recognize this."],
+    "caves": ["I’ve heard of the Caves in Foroise, but I can’t say I know much about them. Sorry."],
+    "statueMissing": ["Ah the statue. The pride of Sliavh. For safekeeping, years before the Shattering, it was moved to the Church of Foroise.", "You…you say it was stolen?", "THE STATUE OF THE MOUNTAINS WAS STOLEN??", "Sorry, I must control myself.", "Find it please. It would do us all a great service"],
+    "statueSold": ["The statue was SOLD?? AS IN SOLD FOR MONEY?!","I mean, *ehem*, thank you for this information. Please find the statue. The entire city is counting on you."],
+    "statue": ["You found the statue! Praise the stars! You’re a god send to us all.", "I’d suggest putting it on the pedestal out in the mountains, its rightful home."],
+    "chest": ["The statue revealed a chest? How curious. I’d never noticed a vault.","Do you have a key?","No? Hm…","That statue is of great significance to Sliavh, I feel obligated to help you open it.","Hold here just a moment. It’s an older style key, but I believe I’ll be able to fashion something...","...","..!","THE DIAMOND?!","Wow. It really is."," Inform the king of Lochan, I’m sure he will want to know.", "Although this doesn’t look good for the people of Sliavh…", "I wouldn’t suggest showing the diamond to anyone else in town. If you let the thief know you found it, they may run away.”"],
+    "letters": ["The letters in the chest. It looks like they were written by the alchemist girl."]
+    
+}

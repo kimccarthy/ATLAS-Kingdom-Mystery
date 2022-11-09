@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		63043B5828F4B34A00D29993 /* Parsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63043B5728F4B34A00D29993 /* Parsing.swift */; };
+		63043B5A28F4B50400D29993 /* dialogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 63043B5928F4B50400D29993 /* dialogue.json */; };
+		63043B5C28F76DEB00D29993 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63043B5B28F76DEB00D29993 /* Data+.swift */; };
+		63043B5E28F8F8AF00D29993 /* JsonChars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63043B5D28F8F8AF00D29993 /* JsonChars.swift */; };
+		63C709E7291B219800443EDA /* beaver.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709E6291B219800443EDA /* beaver.json */; };
+		63C709EB291B21DB00443EDA /* elephant.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709EA291B21DB00443EDA /* elephant.json */; };
+		63C709ED291B226200443EDA /* hero.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709EC291B226200443EDA /* hero.json */; };
+		63C709EF291B26D500443EDA /* thief.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709EE291B26D500443EDA /* thief.json */; };
+		63C709F1291B270600443EDA /* blacksmith.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709F0291B270600443EDA /* blacksmith.json */; };
+		63C709F3291B273500443EDA /* priest.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709F2291B273500443EDA /* priest.json */; };
+		63C709F5291B277E00443EDA /* artist.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709F4291B277E00443EDA /* artist.json */; };
+		63C709F7291B27AC00443EDA /* baker.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709F6291B27AC00443EDA /* baker.json */; };
+		63C709F9291B27CB00443EDA /* princess.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709F8291B27CB00443EDA /* princess.json */; };
+		63C709FB291B293B00443EDA /* RoomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C709FA291B293B00443EDA /* RoomLayout.swift */; };
+		63F97B7228F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97B7128F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift */; };
+		63F97B7428F09D5600ACF15B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97B7328F09D5600ACF15B /* ContentView.swift */; };
+		63F97B7628F09D5900ACF15B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F97B7528F09D5900ACF15B /* Assets.xcassets */; };
+		63F97B7928F09D5900ACF15B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63F97B7828F09D5900ACF15B /* Preview Assets.xcassets */; };
+		63F97B8328F09D5A00ACF15B /* Kingdom_Mystery_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97B8228F09D5A00ACF15B /* Kingdom_Mystery_AppTests.swift */; };
+		63F97B8D28F09D5A00ACF15B /* Kingdom_Mystery_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97B8C28F09D5A00ACF15B /* Kingdom_Mystery_AppUITests.swift */; };
+		63F97B8F28F09D5A00ACF15B /* Kingdom_Mystery_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97B8E28F09D5A00ACF15B /* Kingdom_Mystery_AppUITestsLaunchTests.swift */; };
+		63F97B9C28F0A64800ACF15B /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F97B9B28F0A64800ACF15B /* Characters.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		63F97B7F28F09D5A00ACF15B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63F97B6628F09D5600ACF15B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63F97B6D28F09D5600ACF15B;
+			remoteInfo = "Kingdom Mystery App";
+		};
+		63F97B8928F09D5A00ACF15B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63F97B6628F09D5600ACF15B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 63F97B6D28F09D5600ACF15B;
+			remoteInfo = "Kingdom Mystery App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		63043B5728F4B34A00D29993 /* Parsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parsing.swift; sourceTree = "<group>"; };
+		63043B5928F4B50400D29993 /* dialogue.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dialogue.json; sourceTree = "<group>"; };
+		63043B5B28F76DEB00D29993 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
+		63043B5D28F8F8AF00D29993 /* JsonChars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonChars.swift; sourceTree = "<group>"; };
+		63C709E6291B219800443EDA /* beaver.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beaver.json; sourceTree = "<group>"; };
+		63C709EA291B21DB00443EDA /* elephant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = elephant.json; sourceTree = "<group>"; };
+		63C709EC291B226200443EDA /* hero.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hero.json; sourceTree = "<group>"; };
+		63C709EE291B26D500443EDA /* thief.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = thief.json; sourceTree = "<group>"; };
+		63C709F0291B270600443EDA /* blacksmith.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = blacksmith.json; sourceTree = "<group>"; };
+		63C709F2291B273500443EDA /* priest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = priest.json; sourceTree = "<group>"; };
+		63C709F4291B277E00443EDA /* artist.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = artist.json; sourceTree = "<group>"; };
+		63C709F6291B27AC00443EDA /* baker.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = baker.json; sourceTree = "<group>"; };
+		63C709F8291B27CB00443EDA /* princess.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = princess.json; sourceTree = "<group>"; };
+		63C709FA291B293B00443EDA /* RoomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomLayout.swift; sourceTree = "<group>"; };
+		63F97B6E28F09D5600ACF15B /* Kingdom Mystery App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kingdom Mystery App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63F97B7128F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingdom_Mystery_AppApp.swift; sourceTree = "<group>"; };
+		63F97B7328F09D5600ACF15B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		63F97B7528F09D5900ACF15B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63F97B7828F09D5900ACF15B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		63F97B7E28F09D5A00ACF15B /* Kingdom Mystery AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kingdom Mystery AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63F97B8228F09D5A00ACF15B /* Kingdom_Mystery_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingdom_Mystery_AppTests.swift; sourceTree = "<group>"; };
+		63F97B8828F09D5A00ACF15B /* Kingdom Mystery AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kingdom Mystery AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63F97B8C28F09D5A00ACF15B /* Kingdom_Mystery_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingdom_Mystery_AppUITests.swift; sourceTree = "<group>"; };
+		63F97B8E28F09D5A00ACF15B /* Kingdom_Mystery_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kingdom_Mystery_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		63F97B9B28F0A64800ACF15B /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		63F97B6B28F09D5600ACF15B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F97B7B28F09D5A00ACF15B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F97B8528F09D5A00ACF15B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		63F97B6528F09D5600ACF15B = {
+			isa = PBXGroup;
+			children = (
+				63F97B7028F09D5600ACF15B /* Kingdom Mystery App */,
+				63F97B8128F09D5A00ACF15B /* Kingdom Mystery AppTests */,
+				63F97B8B28F09D5A00ACF15B /* Kingdom Mystery AppUITests */,
+				63F97B6F28F09D5600ACF15B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		63F97B6F28F09D5600ACF15B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63F97B6E28F09D5600ACF15B /* Kingdom Mystery App.app */,
+				63F97B7E28F09D5A00ACF15B /* Kingdom Mystery AppTests.xctest */,
+				63F97B8828F09D5A00ACF15B /* Kingdom Mystery AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63F97B7028F09D5600ACF15B /* Kingdom Mystery App */ = {
+			isa = PBXGroup;
+			children = (
+				63F97B7128F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift */,
+				63043B5728F4B34A00D29993 /* Parsing.swift */,
+				63043B5B28F76DEB00D29993 /* Data+.swift */,
+				63043B5928F4B50400D29993 /* dialogue.json */,
+				63C709F6291B27AC00443EDA /* baker.json */,
+				63C709F8291B27CB00443EDA /* princess.json */,
+				63C709F0291B270600443EDA /* blacksmith.json */,
+				63C709F2291B273500443EDA /* priest.json */,
+				63C709F4291B277E00443EDA /* artist.json */,
+				63C709EE291B26D500443EDA /* thief.json */,
+				63C709E6291B219800443EDA /* beaver.json */,
+				63C709EA291B21DB00443EDA /* elephant.json */,
+				63C709EC291B226200443EDA /* hero.json */,
+				63F97B9B28F0A64800ACF15B /* Characters.swift */,
+				63043B5D28F8F8AF00D29993 /* JsonChars.swift */,
+				63F97B7328F09D5600ACF15B /* ContentView.swift */,
+				63C709FA291B293B00443EDA /* RoomLayout.swift */,
+				63F97B7528F09D5900ACF15B /* Assets.xcassets */,
+				63F97B7728F09D5900ACF15B /* Preview Content */,
+			);
+			path = "Kingdom Mystery App";
+			sourceTree = "<group>";
+		};
+		63F97B7728F09D5900ACF15B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				63F97B7828F09D5900ACF15B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		63F97B8128F09D5A00ACF15B /* Kingdom Mystery AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				63F97B8228F09D5A00ACF15B /* Kingdom_Mystery_AppTests.swift */,
+			);
+			path = "Kingdom Mystery AppTests";
+			sourceTree = "<group>";
+		};
+		63F97B8B28F09D5A00ACF15B /* Kingdom Mystery AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				63F97B8C28F09D5A00ACF15B /* Kingdom_Mystery_AppUITests.swift */,
+				63F97B8E28F09D5A00ACF15B /* Kingdom_Mystery_AppUITestsLaunchTests.swift */,
+			);
+			path = "Kingdom Mystery AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		63F97B6D28F09D5600ACF15B /* Kingdom Mystery App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63F97B9228F09D5A00ACF15B /* Build configuration list for PBXNativeTarget "Kingdom Mystery App" */;
+			buildPhases = (
+				63F97B6A28F09D5600ACF15B /* Sources */,
+				63F97B6B28F09D5600ACF15B /* Frameworks */,
+				63F97B6C28F09D5600ACF15B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Kingdom Mystery App";
+			productName = "Kingdom Mystery App";
+			productReference = 63F97B6E28F09D5600ACF15B /* Kingdom Mystery App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		63F97B7D28F09D5A00ACF15B /* Kingdom Mystery AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63F97B9528F09D5A00ACF15B /* Build configuration list for PBXNativeTarget "Kingdom Mystery AppTests" */;
+			buildPhases = (
+				63F97B7A28F09D5A00ACF15B /* Sources */,
+				63F97B7B28F09D5A00ACF15B /* Frameworks */,
+				63F97B7C28F09D5A00ACF15B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63F97B8028F09D5A00ACF15B /* PBXTargetDependency */,
+			);
+			name = "Kingdom Mystery AppTests";
+			productName = "Kingdom Mystery AppTests";
+			productReference = 63F97B7E28F09D5A00ACF15B /* Kingdom Mystery AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		63F97B8728F09D5A00ACF15B /* Kingdom Mystery AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63F97B9828F09D5A00ACF15B /* Build configuration list for PBXNativeTarget "Kingdom Mystery AppUITests" */;
+			buildPhases = (
+				63F97B8428F09D5A00ACF15B /* Sources */,
+				63F97B8528F09D5A00ACF15B /* Frameworks */,
+				63F97B8628F09D5A00ACF15B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				63F97B8A28F09D5A00ACF15B /* PBXTargetDependency */,
+			);
+			name = "Kingdom Mystery AppUITests";
+			productName = "Kingdom Mystery AppUITests";
+			productReference = 63F97B8828F09D5A00ACF15B /* Kingdom Mystery AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63F97B6628F09D5600ACF15B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					63F97B6D28F09D5600ACF15B = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+					63F97B7D28F09D5A00ACF15B = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 63F97B6D28F09D5600ACF15B;
+					};
+					63F97B8728F09D5A00ACF15B = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = 63F97B6D28F09D5600ACF15B;
+					};
+				};
+			};
+			buildConfigurationList = 63F97B6928F09D5600ACF15B /* Build configuration list for PBXProject "Kingdom Mystery App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63F97B6528F09D5600ACF15B;
+			productRefGroup = 63F97B6F28F09D5600ACF15B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63F97B6D28F09D5600ACF15B /* Kingdom Mystery App */,
+				63F97B7D28F09D5A00ACF15B /* Kingdom Mystery AppTests */,
+				63F97B8728F09D5A00ACF15B /* Kingdom Mystery AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		63F97B6C28F09D5600ACF15B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63C709F9291B27CB00443EDA /* princess.json in Resources */,
+				63C709ED291B226200443EDA /* hero.json in Resources */,
+				63043B5A28F4B50400D29993 /* dialogue.json in Resources */,
+				63C709F3291B273500443EDA /* priest.json in Resources */,
+				63C709F7291B27AC00443EDA /* baker.json in Resources */,
+				63C709EF291B26D500443EDA /* thief.json in Resources */,
+				63C709E7291B219800443EDA /* beaver.json in Resources */,
+				63C709EB291B21DB00443EDA /* elephant.json in Resources */,
+				63F97B7928F09D5900ACF15B /* Preview Assets.xcassets in Resources */,
+				63C709F5291B277E00443EDA /* artist.json in Resources */,
+				63F97B7628F09D5900ACF15B /* Assets.xcassets in Resources */,
+				63C709F1291B270600443EDA /* blacksmith.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F97B7C28F09D5A00ACF15B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F97B8628F09D5A00ACF15B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		63F97B6A28F09D5600ACF15B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63043B5828F4B34A00D29993 /* Parsing.swift in Sources */,
+				63F97B7428F09D5600ACF15B /* ContentView.swift in Sources */,
+				63043B5C28F76DEB00D29993 /* Data+.swift in Sources */,
+				63C709FB291B293B00443EDA /* RoomLayout.swift in Sources */,
+				63043B5E28F8F8AF00D29993 /* JsonChars.swift in Sources */,
+				63F97B9C28F0A64800ACF15B /* Characters.swift in Sources */,
+				63F97B7228F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F97B7A28F09D5A00ACF15B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63F97B8328F09D5A00ACF15B /* Kingdom_Mystery_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63F97B8428F09D5A00ACF15B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63F97B8F28F09D5A00ACF15B /* Kingdom_Mystery_AppUITestsLaunchTests.swift in Sources */,
+				63F97B8D28F09D5A00ACF15B /* Kingdom_Mystery_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		63F97B8028F09D5A00ACF15B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63F97B6D28F09D5600ACF15B /* Kingdom Mystery App */;
+			targetProxy = 63F97B7F28F09D5A00ACF15B /* PBXContainerItemProxy */;
+		};
+		63F97B8A28F09D5A00ACF15B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 63F97B6D28F09D5600ACF15B /* Kingdom Mystery App */;
+			targetProxy = 63F97B8928F09D5A00ACF15B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		63F97B9028F09D5A00ACF15B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63F97B9128F09D5A00ACF15B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63F97B9328F09D5A00ACF15B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kingdom Mystery App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kimccarthy.Kingdom-Mystery-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		63F97B9428F09D5A00ACF15B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Kingdom Mystery App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kimccarthy.Kingdom-Mystery-App";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		63F97B9628F09D5A00ACF15B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kimccarthy.Kingdom-Mystery-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kingdom Mystery App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kingdom Mystery App";
+			};
+			name = Debug;
+		};
+		63F97B9728F09D5A00ACF15B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kimccarthy.Kingdom-Mystery-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kingdom Mystery App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kingdom Mystery App";
+			};
+			name = Release;
+		};
+		63F97B9928F09D5A00ACF15B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kimccarthy.Kingdom-Mystery-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kingdom Mystery App";
+			};
+			name = Debug;
+		};
+		63F97B9A28F09D5A00ACF15B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "kimccarthy.Kingdom-Mystery-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kingdom Mystery App";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63F97B6928F09D5600ACF15B /* Build configuration list for PBXProject "Kingdom Mystery App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63F97B9028F09D5A00ACF15B /* Debug */,
+				63F97B9128F09D5A00ACF15B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63F97B9228F09D5A00ACF15B /* Build configuration list for PBXNativeTarget "Kingdom Mystery App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63F97B9328F09D5A00ACF15B /* Debug */,
+				63F97B9428F09D5A00ACF15B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63F97B9528F09D5A00ACF15B /* Build configuration list for PBXNativeTarget "Kingdom Mystery AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63F97B9628F09D5A00ACF15B /* Debug */,
+				63F97B9728F09D5A00ACF15B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63F97B9828F09D5A00ACF15B /* Build configuration list for PBXNativeTarget "Kingdom Mystery AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63F97B9928F09D5A00ACF15B /* Debug */,
+				63F97B9A28F09D5A00ACF15B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63F97B6628F09D5600ACF15B /* Project object */;
+}

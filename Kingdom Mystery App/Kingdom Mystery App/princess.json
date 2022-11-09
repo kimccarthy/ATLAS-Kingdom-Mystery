@@ -1,0 +1,24 @@
+{
+    "name": "Princess",
+    "img": "lioness",
+    "img2": "lioness-crowned",
+    "intro": ["What do you want?"],
+    "initial": ["Someone new? Huh. That's a rare sight.","Who am I? You're not getting that info out of me.", "Can't you see I'm in a bad mood? Go away."],
+    "crown":["I thought I told you to-HEY!", "There it is! Where did you find this??","Sorry for everything earlier. This is mine.","I’d lost it. I was too scared to go back and tell Dad that I’d lost it.","My name is Lenore. I’m Princess around here. I can’t thank you enough. I don’t know why you’re here, but I could get you an invitation to see my dad if you would like!","Stop by the castle and he will grant you audience any time you wish."],
+    "diamond":[],
+    "vaultNote": [],
+    "redBerries":[],
+    "greenBerries":[],
+    "disguising":[],
+    "priest":[],
+    "invoice":[],
+    "potion":[],
+    "recipe":[],
+    "caves":[],
+    "statueMissing":[],
+    "statueSold":[],
+    "statue":[],
+    "chest":[],
+    "letters":[]
+    
+}

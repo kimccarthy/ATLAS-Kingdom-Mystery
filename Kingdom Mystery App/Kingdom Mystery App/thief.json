@@ -1,0 +1,24 @@
+{
+    "name": "Thief",
+    "img": "raccoon",
+    "img2": "",
+    "intro": ["Yeah? Do you need something?"],
+    "initial":["Oh ho ho, new guy huh?", "Pleasure to meet you. I don't give my name freely to strangers, though", "We may have a king, but don't get it twisted. I run the streets around here.", "Stay in your lane and you should be fine."],
+    "crown":[],
+    "diamond":["Listen. I know the reputation I get around here, but it wasn’t me. I wouldn’t be so stupid as to steal something so high profile.","I mean, I would never steal anyth-", "Oh who am I kidding. You’re not a cop. Gotta make a living somehow, right?"],
+    "vaultNote": ["A note? What kinda amateur leaves a note. Too much evidence. Clearly they weren’t very bright."],
+    "redBerries":[],
+    "greenBerries":["Did…did I grab those for you? What the hell happened. I can’t remember. I had those and then blacked out and…", "Keep them. I don’t really need them. Just whatever you did to me, don’t do it again please."],
+    "disguising":["A disguise, eh? NOW you’re speaking my language.", "Unfortunately, can’t say I’m very artistically inclined. I’d help if I could, my friend."],
+    "priest":["The Priest? Ah, poor man’s gonna wake up to a real shock. He’s been out of it since before all of this went down.", "Nice guy, though.”"],
+    "invoice": ["“Wait a second, WHERE’D YOU GET THIS?", "You got INTO MY VAULT? That’s personal!", "There’s nothing valuable in there right now, just some old trash. Fine. You can keep it. It’s just junk anyways."],
+    "potion": ["A gift? For me? Shucks, you shouldn’t have.","...","...what in the world is in thi-","...","...hello, friend. I will do anything for you, friend. I am your humble servant, friend.", "Let me grab you something, friend."],
+    "recipe": ["““Wait a second, WHERE’D YOU GET THIS?", "You got INTO MY VAULT? That’s personal!", "There’s nothing valuable in there right now, just some old trash. Fine. You can keep it. It’s just junk anyways.”"],
+    "caves": ["Those caves outside? Yeah I know ‘em. What’s it to you?"],
+    "statueMissing": ["A missing statue?! I’ve never even heard of the Statue of Sliavh! I would never see its beauty and…and…", "…and take it.","Man. Fine.","I took it, OK? It was an easy target. The priest was asleep! And it was so pretty!", "I don’t have it anymore. I sold it."],
+    "statueSold": ["I don’t know where I sold it, I already told you. I’m sorry!"],
+    "statue": ["Ohhhh it was with the Alchemist? Figures. Sorry about that, I don’t pride myself in my memory."],
+    "chest": ["It hid a chest? Man I would’ve never sold the statue if I’d known there was a hidden treasure underneath!", "It’s locked? That’s a shame. Haven’t seen a key around, wonder if you could get a makeshift one…"],
+    "letters": ["Hm, odd letters. Looks like they’re signed by the Alchemist. Where’d you find these?"]
+    
+}

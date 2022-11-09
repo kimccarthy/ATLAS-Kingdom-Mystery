@@ -1,0 +1,24 @@
+{
+    "name": "Baker",
+    "img": "bear",
+    "img2": "",
+    "intro": ["...?"],
+    "initial":["...hi."],
+    "crown":["..."],
+    "diamond":["..."],
+    "vaultNote":["..."] ,
+    "redBerries":[],
+    "greenBerries":[],
+    "disguising":["..."],
+    "priest": ["“…hm? Ah, Priest.", "A friend of mine.","Has he woken up?", "No? Hm."],
+    "invoice":["..."],
+    "potion":[],
+    "recipe":["“...oh?","There it is. I’ve been looking for this.","...","Take this to Priest.", "Thank you."],
+    "caves":["..."],
+    "statueMissing":["..."],
+    "statueSold":["..."],
+    "statue":["..."],
+    "chest":["..."],
+    "letters":["..."]
+    
+}
