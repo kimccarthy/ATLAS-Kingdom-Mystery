@@ -124,56 +124,22 @@ class Story{
         if(progress[2]) {if let _ = c.potion{arr.append("Potion")}}
         
         
-        //additional conditional: 
+        //additional conditional:
         if(progress[11] && !progress[12]) {if let _ = c.statueMissing{arr.append("The Missing Statue")}}
         if(progress[12] && !progress[13]) {if let _ = c.statueSold{arr.append("The Sold Statue")}}
         if(progress[13]) {if let _ = c.statue{arr.append("The Found Statue")}}
         
-        if(!progress[11]&&c.name=="Priest"){
-            arr = ["..."];
+        
+        //chest, letters
+        //conditional, got chest
+        if let _ = c.chest{arr.append("Chest")}
+        
+        if(progress[14] && !progress[15]){
+            if let _ = c.letters{arr.append("Letters")}
         }
-        
-        
-        
-        
-        
-    /*case "initial":
-        return c.initial;
-    case "crown":
-        //if updated[crown]
-        if let cr = c.crown{ return cr; }
-    case "diamond":
-        if let d = c.diamond{return d;}
-    case "vaultNote":
-        //if updated[1]
-        if let v = c.vaultNote{return v;}
-    case "redberries":
-        //if found the redberries and the person is the artist
-        if let r = c.redBerries{return r;}
-    case "greenBerries":
-            if let g = c.greenBerries{return g;}
-    case "disguising":
-        if let d = c.disguising{return d;}
-    case "priest":
-        if let p = c.priest{return p;}
-    case "invoice":
-        if let i = c.invoice{return i;}
-    case "potion":
-        if let p = c.potion{return p;}
-    case "recipe":
-        if let r = c.recipe{return r;}
-    case "caves":
-        if let ca = c.caves{return ca;}
-    case "statueMissing":
-        if let s = c.statueMissing{return s;}
-    case "statueSold":
-        if let s = c.statueSold{return s;}
-    case "statue":
-        if let s = c.statue{return s;}
-    case "chest":
-        if let s = c.chest{return s;}
-    case "letters":
-        if let l = c.letters{return l;}*/
+        if(!progress[11]&&c.name=="Priest"){
+            arr = ["..."]; //snoozin
+        }
         return arr;
     }
     

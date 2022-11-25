@@ -84,15 +84,15 @@ struct Char: Codable{
             if let g = greenBerries{return g;}
         case "disguising":
             if let d = disguising{return d;}
-        case :
+        case "priest":
             if let p = priest{return p;}
-        case 9:
+        case "invoice":
             if let i = invoice{return i;}
-        case 10:
+        case "potion":
             if let p = potion{return p;}
-        case 11:
+        case "recipe":
             if let r = recipe{return r;}
-        case 12:
+        case "caves":
             if let c = caves{return c;}
         default:
             var arr = [String]();

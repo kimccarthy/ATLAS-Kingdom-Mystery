@@ -10,7 +10,7 @@ import SwiftUI
 //let chars = testingChars();
 struct  ContentView: View {
     @State var page = 0
-    
+    let s = Story();
     var inRoom = false
     var home: some View{
         
@@ -36,25 +36,25 @@ struct  ContentView: View {
             let b = Board()
             let ch = b.room1.characters
             
-            
             VStack{
-                
-                ForEach(0..<ch.count){ k in
-                    Menu{
-                        ForEach(0..<ch[k].getOptions().count){ i in
-                            Button(ch[k].getOptions()[ch[k].getOptions().count-i-1], action: {
-                                curr_dial = ch[k].dialogue(i: 4)!;
-                                tog.toggle();
-                                print(tog, curr_dial);
-                            }
-                            );
-                        }
-                    } label:{
-                        Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-                    }
+                HStack{
                     
+                    ForEach(0..<ch.count){ k in
+                        Menu{
+                            ForEach(0..<s.options(c: ch[k]).count){ i in
+                                Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
+                                    curr_dial = ch[k].dialogue(str: "priest")!;
+                                    tog.toggle();
+                                    print(tog, curr_dial);
+                                }
+                                );
+                            }
+                        } label:{
+                            Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                        }
+                        
+                    }
                 }
-                
                 Button("<Back"){
                     page = 0
                 }
@@ -75,15 +75,6 @@ struct  ContentView: View {
                 //var num = 0;
                
                 ZStack{
-                    /*switch(strNum){
-                    case(strNum<str.count):
-                        Text(str[strNum]).foregroundColor(.gray).padding().frame(width:300, height: 200).background(.white).border(.gray).cornerRadius(5).position(x:200, y:600);
-                    case(strNum==str.count):
-                        Text("");
-                        tog.toggle();
-                    default:
-                        Text("");
-                    }*/
 
                     if(strNum<str.count){
                         Text(str[strNum]).foregroundColor(.gray).padding().frame(width:300, height: 200).background(.white).border(.gray).cornerRadius(5).position(x:200, y:600);
@@ -114,75 +105,106 @@ struct  ContentView: View {
         
     }
     var room2: some View{
-        VStack{
-          let b = Board()
-          let ch = b.room2.characters
-            if let c = ch[0]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            if let c = ch[1]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            if let c = ch[2]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            Button("<Back"){
-                page = 0
-            }
+        ZStack{
+            let b = Board()
+            let ch = b.room2.characters
+            VStack{
+                HStack{
+                    ForEach(0..<ch.count){ k in
+                        Menu{
+                            ForEach(0..<s.options(c: ch[k]).count){ i in
+                                Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
+                                    curr_dial = ch[k].dialogue(str: "priest")!;
+                                    tog.toggle();
+                                    print(tog, curr_dial);
+                                }
+                                );
+                            }
+                        } label:{
+                            Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                        }
+                        
+                    }
+                    
+                   
+                    }
+                Button("<Back"){
+                    page = 0
+                }
+                }
             
+            if(tog){
+                showMyBoy(str: curr_dial);
+            }
         }
     }
     
     var room3: some View{
-        VStack{
+        ZStack{
             let b = Board()
             let ch = b.room3.characters
-            if let c = ch[0]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            if let c = ch[1]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            Button("<Back"){
-                page = 0
+            VStack{
+            HStack{
+                
+                ForEach(0..<ch.count){ k in
+                    Menu{
+                        ForEach(0..<s.options(c: ch[k]).count){ i in
+                            Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
+                                curr_dial = ch[k].dialogue(str: "priest")!;
+                                tog.toggle();
+                                print(tog, curr_dial);
+                            }
+                            );
+                        }
+                    } label:{
+                        Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                    }
+                    
+                }
             }
-            
+                Button("<Back"){
+                    page = 0
+                }
+                
+            }
+            if(tog){
+                showMyBoy(str: curr_dial);
+            }
         }
     }
     
     var room4: some View{
-        VStack{
-           let b = Board() //gonna nee
+        ZStack{
+            let b = Board()
             let ch = b.room4.characters
-            if let c = ch[0]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            if let c = ch[1]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            if let c = ch[2]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            Button("<Back"){
-                page = 0
-            }
+            VStack{
             
+                HStack{
+                    
+                    ForEach(0..<ch.count){ k in
+                        Menu{
+                            ForEach(0..<s.options(c: ch[k]).count){ i in
+                                Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
+                                    curr_dial = ch[k].dialogue(str: "priest")!;
+                                    tog.toggle();
+                                    print(tog, curr_dial);
+                                }
+                                );
+                            }
+                        } label:{
+                            Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                        }
+                        
+                    }
+                }
+                Button("<Back"){
+                    page = 0
+                }
+                
+            }
+            if(tog){
+                showMyBoy(str: curr_dial);
+            }
         }
     }
     var body: some View {
