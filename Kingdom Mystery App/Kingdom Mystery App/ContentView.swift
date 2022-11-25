@@ -29,43 +29,89 @@ struct  ContentView: View {
             }
         }
     }
-    
-    var allOfThem: some View{
-        VStack{
-           
-            if let chars = Char.chars{
-                if let c = chars[0] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[1] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[2] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[3] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[4] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[5] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[6] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[7] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                if let c = chars[8] {Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)}
-                Button("< Back"){
-                    page = 0
-                }
-            } else{
-                Text("Error")
-            }
-                }
-        
-    }
+    @State var tog = false;
+    @State var curr_dial = [String](); //in which case we can use it in the func
     var room1: some View{
-        VStack{
+        ZStack{
             let b = Board()
             let ch = b.room1.characters
-            if let c = ch[0]{Button(action: {
-                print("\(c.name) pressed")
-            }) {
-                Image(c.img).resizable().frame(width: 50.0, height: 60.0).imageScale(.small)
-            }}
-            Button("<Back"){
-                page = 0
-            }
             
+            
+            VStack{
+                
+                ForEach(0..<ch.count){ k in
+                    Menu{
+                        ForEach(0..<ch[k].getOptions().count){ i in
+                            Button(ch[k].getOptions()[ch[k].getOptions().count-i-1], action: {
+                                curr_dial = ch[k].dialogue(i: 4)!;
+                                tog.toggle();
+                                print(tog, curr_dial);
+                            }
+                            );
+                        }
+                    } label:{
+                        Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                    }
+                    
+                }
+                
+                Button("<Back"){
+                    page = 0
+                }
+                
+            }
+            if(tog){
+                showMyBoy(str: curr_dial);
+            }
         }
+        
+    }
+    @State var refresh = true;
+    @State var strNum = 0;
+    func showMyBoy(str: Array<String>)-> some View{
+        //print("begin");
+        var ye: some View{
+            VStack{
+                //var num = 0;
+               
+                ZStack{
+                    /*switch(strNum){
+                    case(strNum<str.count):
+                        Text(str[strNum]).foregroundColor(.gray).padding().frame(width:300, height: 200).background(.white).border(.gray).cornerRadius(5).position(x:200, y:600);
+                    case(strNum==str.count):
+                        Text("");
+                        tog.toggle();
+                    default:
+                        Text("");
+                    }*/
+
+                    if(strNum<str.count){
+                        Text(str[strNum]).foregroundColor(.gray).padding().frame(width:300, height: 200).background(.white).border(.gray).cornerRadius(5).position(x:200, y:600);
+                    }
+                    
+                }
+                HStack{
+                    Button("<"){
+                        if(strNum==0) { strNum=0; }
+                        else{ strNum-=1;}
+                        refresh.toggle();
+                    }
+                    Text("\(strNum+1)/\(str.count)");
+                    Button(">"){
+                    
+                        if(strNum==str.count-1){ tog.toggle() }
+                        else{ strNum+=1 }
+                        refresh.toggle();
+                        
+                    }
+                    
+                }
+                
+            }
+        }
+       // print("hitting")
+        return ye
+        
     }
     var room2: some View{
         VStack{

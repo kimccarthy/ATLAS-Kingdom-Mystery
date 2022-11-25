@@ -62,4 +62,93 @@ struct Char: Codable{
            print(name)
            return nil
        }
+    
+    func dialogue(i: Int)-> Array<String>?{
+        //let arr:Array<String> ;
+        switch(i){
+        case 0:
+            return intro;
+        case 1:
+            return initial;
+        case 2:
+            if let c = crown{
+                print(c);
+                return c;
+                
+            }
+        case 3:
+            if let d = diamond{return d;}
+        case 4:
+            if let v = vaultNote{return v;}
+        case 5:
+            if let r = redBerries{return r;}
+        case 6:
+            if let g = greenBerries{return g;}
+        case 7:
+            if let d = disguising{return d;}
+        case 8:
+            if let p = priest{return p;}
+        case 9:
+            if let i = invoice{return i;}
+        case 10:
+            if let p = potion{return p;}
+        case 11:
+            if let r = recipe{return r;}
+        case 12:
+            if let c = caves{return c;}
+        default:
+            var arr = [String]();
+            arr.append(" ");
+            return arr
+        
+                
+                /*var diamond: Array<String>?
+                 var vaultNote: Array<String>?
+                 var redBerries: Array<String>?
+                 var greenBerries: Array<String>?
+                 var disguising: Array<String>?
+                 var priest: Array<String>?
+                 var invoice: Array<String>?
+                 var potion: Array<String>?
+                 var recipe: Array<String>?
+                 var caves: Array<String>?
+                 var statueMissing: Array<String>?
+                 var statueSold: Array<String>?
+                 var statue: Array<String>?
+                 var chest: Array<String>?
+                 var letters:Array<String>?*/
+       // default: return nil;
+        }
+        //return nil;
+        var arr = [String]();
+        arr.append(" ");
+        return arr
+    }
+    
+    func getOptions() -> Array<String>{
+        
+        //this will also include booleans in a second
+        
+        var str = [String]();
+        if(crown!.count>0){ str.append("Crown") }
+        if(diamond!.count>0){str.append("Diamond")}
+        if(vaultNote!.count>0){str.append("Note in the Vault")}
+        if(redBerries!.count>0){str.append("Red Berries")}
+        if(greenBerries!.count>0){str.append("Green Berries")}
+        if(disguising!.count>0){str.append("Disguises")}
+        if(priest!.count>0){str.append("The Priest")}
+        if(invoice!.count>0){str.append("Invoice")}
+        if(potion!.count>0){str.append("Potion")}
+        if(recipe!.count>0){str.append("Recipe")}
+        if(caves!.count>0){str.append("Caves")}
+        if(statueMissing!.count>0){str.append("Missing Statue")}
+        if(statueSold!.count>0){str.append("Sold Statue")}
+        if(statue!.count>0){str.append("Statue")}
+        if(chest!.count>0){str.append("Chest")}
+        if(letters!.count>0){str.append("Letters")}
+        return str;
+        
+        
+    }
+    
 }
