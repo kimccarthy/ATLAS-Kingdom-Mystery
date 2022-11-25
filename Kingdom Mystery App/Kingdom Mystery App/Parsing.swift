@@ -63,30 +63,28 @@ struct Char: Codable{
            return nil
        }
     
-    func dialogue(i: Int)-> Array<String>?{
+    func dialogue(str: String)-> Array<String>?{
         //let arr:Array<String> ;
-        switch(i){
-        case 0:
+        switch(str){
+        case "intro":
             return intro;
-        case 1:
+        case "initial":
             return initial;
-        case 2:
+        case "crown":
             if let c = crown{
-                print(c);
                 return c;
-                
             }
-        case 3:
+        case "diamond":
             if let d = diamond{return d;}
-        case 4:
+        case "vaultNote":
             if let v = vaultNote{return v;}
-        case 5:
+        case "redberries":
             if let r = redBerries{return r;}
-        case 6:
+        case "greenBerries":
             if let g = greenBerries{return g;}
-        case 7:
+        case "disguising":
             if let d = disguising{return d;}
-        case 8:
+        case :
             if let p = priest{return p;}
         case 9:
             if let i = invoice{return i;}

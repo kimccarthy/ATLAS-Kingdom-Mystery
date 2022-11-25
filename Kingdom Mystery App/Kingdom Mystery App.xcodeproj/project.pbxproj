@@ -11,6 +11,7 @@
 		63043B5A28F4B50400D29993 /* dialogue.json in Resources */ = {isa = PBXBuildFile; fileRef = 63043B5928F4B50400D29993 /* dialogue.json */; };
 		63043B5C28F76DEB00D29993 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63043B5B28F76DEB00D29993 /* Data+.swift */; };
 		63043B5E28F8F8AF00D29993 /* JsonChars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63043B5D28F8F8AF00D29993 /* JsonChars.swift */; };
+		6394D7A62931263700F86F98 /* StoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D7A52931263700F86F98 /* StoryHandler.swift */; };
 		63C709E7291B219800443EDA /* beaver.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709E6291B219800443EDA /* beaver.json */; };
 		63C709EB291B21DB00443EDA /* elephant.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709EA291B21DB00443EDA /* elephant.json */; };
 		63C709ED291B226200443EDA /* hero.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709EC291B226200443EDA /* hero.json */; };
@@ -53,6 +54,7 @@
 		63043B5928F4B50400D29993 /* dialogue.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dialogue.json; sourceTree = "<group>"; };
 		63043B5B28F76DEB00D29993 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		63043B5D28F8F8AF00D29993 /* JsonChars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonChars.swift; sourceTree = "<group>"; };
+		6394D7A52931263700F86F98 /* StoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHandler.swift; sourceTree = "<group>"; };
 		63C709E6291B219800443EDA /* beaver.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beaver.json; sourceTree = "<group>"; };
 		63C709EA291B21DB00443EDA /* elephant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = elephant.json; sourceTree = "<group>"; };
 		63C709EC291B226200443EDA /* hero.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hero.json; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		63F97B7028F09D5600ACF15B /* Kingdom Mystery App */ = {
 			isa = PBXGroup;
 			children = (
+				6394D7A52931263700F86F98 /* StoryHandler.swift */,
 				63F97B7128F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift */,
 				63043B5728F4B34A00D29993 /* Parsing.swift */,
 				63043B5B28F76DEB00D29993 /* Data+.swift */,
@@ -316,6 +319,7 @@
 				63F97B7428F09D5600ACF15B /* ContentView.swift in Sources */,
 				63043B5C28F76DEB00D29993 /* Data+.swift in Sources */,
 				63C709FB291B293B00443EDA /* RoomLayout.swift in Sources */,
+				6394D7A62931263700F86F98 /* StoryHandler.swift in Sources */,
 				63043B5E28F8F8AF00D29993 /* JsonChars.swift in Sources */,
 				63F97B9C28F0A64800ACF15B /* Characters.swift in Sources */,
 				63F97B7228F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift in Sources */,
