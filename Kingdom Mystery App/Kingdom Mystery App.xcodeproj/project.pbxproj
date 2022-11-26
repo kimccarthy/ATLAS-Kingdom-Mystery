@@ -12,6 +12,7 @@
 		63043B5C28F76DEB00D29993 /* Data+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63043B5B28F76DEB00D29993 /* Data+.swift */; };
 		63043B5E28F8F8AF00D29993 /* JsonChars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63043B5D28F8F8AF00D29993 /* JsonChars.swift */; };
 		6394D7A62931263700F86F98 /* StoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D7A52931263700F86F98 /* StoryHandler.swift */; };
+		6394D7A82931A70A00F86F98 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394D7A72931A70A00F86F98 /* Inventory.swift */; };
 		63C709E7291B219800443EDA /* beaver.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709E6291B219800443EDA /* beaver.json */; };
 		63C709EB291B21DB00443EDA /* elephant.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709EA291B21DB00443EDA /* elephant.json */; };
 		63C709ED291B226200443EDA /* hero.json in Resources */ = {isa = PBXBuildFile; fileRef = 63C709EC291B226200443EDA /* hero.json */; };
@@ -55,6 +56,7 @@
 		63043B5B28F76DEB00D29993 /* Data+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+.swift"; sourceTree = "<group>"; };
 		63043B5D28F8F8AF00D29993 /* JsonChars.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonChars.swift; sourceTree = "<group>"; };
 		6394D7A52931263700F86F98 /* StoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryHandler.swift; sourceTree = "<group>"; };
+		6394D7A72931A70A00F86F98 /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
 		63C709E6291B219800443EDA /* beaver.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = beaver.json; sourceTree = "<group>"; };
 		63C709EA291B21DB00443EDA /* elephant.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = elephant.json; sourceTree = "<group>"; };
 		63C709EC291B226200443EDA /* hero.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = hero.json; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		63F97B6528F09D5600ACF15B = {
 			isa = PBXGroup;
 			children = (
+				6394D7A72931A70A00F86F98 /* Inventory.swift */,
 				63F97B7028F09D5600ACF15B /* Kingdom Mystery App */,
 				63F97B8128F09D5A00ACF15B /* Kingdom Mystery AppTests */,
 				63F97B8B28F09D5A00ACF15B /* Kingdom Mystery AppUITests */,
@@ -318,6 +321,7 @@
 				63043B5828F4B34A00D29993 /* Parsing.swift in Sources */,
 				63F97B7428F09D5600ACF15B /* ContentView.swift in Sources */,
 				63043B5C28F76DEB00D29993 /* Data+.swift in Sources */,
+				6394D7A82931A70A00F86F98 /* Inventory.swift in Sources */,
 				63C709FB291B293B00443EDA /* RoomLayout.swift in Sources */,
 				6394D7A62931263700F86F98 /* StoryHandler.swift in Sources */,
 				63043B5E28F8F8AF00D29993 /* JsonChars.swift in Sources */,

@@ -31,21 +31,31 @@ struct  ContentView: View {
     }
     @State var tog = false;
     @State var curr_dial = [String](); //in which case we can use it in the func
+    
     var room1: some View{
         ZStack{
-            let b = Board()
-            let ch = b.room1.characters
+            let ch = s.b.room1.characters
             
-            VStack{
+            //VStack{
                 HStack{
-                    
+                    Menu{
+                        Button("Inventory", action:{print("Inventory")});
+                        Button("Map", action:{
+                            page = 0
+                            tog = false;
+                        });
+                    } label:{
+                        Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                    }
                     ForEach(0..<ch.count){ k in
                         Menu{
                             ForEach(0..<s.options(c: ch[k]).count){ i in
                                 Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
-                                    curr_dial = ch[k].dialogue(str: "priest")!;
-                                    tog.toggle();
-                                    print(tog, curr_dial);
+                                    curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
+                                    s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
+                                    tog = true;
+                                    strNum = 0;
+                                    //print(tog, curr_dial);
                                 }
                                 );
                             }
@@ -55,11 +65,6 @@ struct  ContentView: View {
                         
                     }
                 }
-                Button("<Back"){
-                    page = 0
-                }
-                
-            }
             if(tog){
                 showMyBoy(str: curr_dial);
             }
@@ -90,7 +95,10 @@ struct  ContentView: View {
                     Text("\(strNum+1)/\(str.count)");
                     Button(">"){
                     
-                        if(strNum==str.count-1){ tog.toggle() }
+                        if(strNum==str.count-1){
+                            strNum = 0;
+                            tog.toggle()
+                        }
                         else{ strNum+=1 }
                         refresh.toggle();
                         
@@ -106,17 +114,24 @@ struct  ContentView: View {
     }
     var room2: some View{
         ZStack{
-            let b = Board()
-            let ch = b.room2.characters
-            VStack{
+            let ch = s.b.room2.characters;
+            //VStack{
                 HStack{
+                    Menu{
+                        Button("Inventory", action:{print("Inventory")});
+                        Button("Map", action:{page = 0});
+                    } label:{
+                        Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                    }
                     ForEach(0..<ch.count){ k in
                         Menu{
                             ForEach(0..<s.options(c: ch[k]).count){ i in
                                 Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
-                                    curr_dial = ch[k].dialogue(str: "priest")!;
-                                    tog.toggle();
-                                    print(tog, curr_dial);
+                                    curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
+                                    s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
+                                    tog = true;
+                                    strNum = 0;
+                                    //print(tog, curr_dial);
                                 }
                                 );
                             }
@@ -128,10 +143,6 @@ struct  ContentView: View {
                     
                    
                     }
-                Button("<Back"){
-                    page = 0
-                }
-                }
             
             if(tog){
                 showMyBoy(str: curr_dial);
@@ -141,18 +152,24 @@ struct  ContentView: View {
     
     var room3: some View{
         ZStack{
-            let b = Board()
-            let ch = b.room3.characters
-            VStack{
+            let ch = s.b.room3.characters
+            //VStack{
             HStack{
-                
+                Menu{
+                    Button("Inventory", action:{print("Inventory")});
+                    Button("Map", action:{page = 0});
+                } label:{
+                    Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                }
                 ForEach(0..<ch.count){ k in
                     Menu{
                         ForEach(0..<s.options(c: ch[k]).count){ i in
                             Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
-                                curr_dial = ch[k].dialogue(str: "priest")!;
-                                tog.toggle();
-                                print(tog, curr_dial);
+                                curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
+                                s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
+                                tog = true;
+                                strNum = 0;
+                                //print(tog, curr_dial);
                             }
                             );
                         }
@@ -160,13 +177,7 @@ struct  ContentView: View {
                         Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
                     }
                     
-                }
-            }
-                Button("<Back"){
-                    page = 0
-                }
-                
-            }
+                }}
             if(tog){
                 showMyBoy(str: curr_dial);
             }
@@ -175,19 +186,25 @@ struct  ContentView: View {
     
     var room4: some View{
         ZStack{
-            let b = Board()
-            let ch = b.room4.characters
-            VStack{
+            let ch = s.b.room4.characters
+            //VStack{
             
                 HStack{
-                    
+                    Menu{
+                        Button("Inventory", action:{print("Inventory")});
+                        Button("Map", action:{page = 0});
+                    } label:{
+                        Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                    }
                     ForEach(0..<ch.count){ k in
                         Menu{
                             ForEach(0..<s.options(c: ch[k]).count){ i in
                                 Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
-                                    curr_dial = ch[k].dialogue(str: "priest")!;
-                                    tog.toggle();
-                                    print(tog, curr_dial);
+                                    curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
+                                    s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
+                                    tog = true;
+                                    strNum = 0;
+                                    //print(tog, curr_dial);
                                 }
                                 );
                             }
@@ -197,11 +214,7 @@ struct  ContentView: View {
                         
                     }
                 }
-                Button("<Back"){
-                    page = 0
-                }
-                
-            }
+            
             if(tog){
                 showMyBoy(str: curr_dial);
             }
