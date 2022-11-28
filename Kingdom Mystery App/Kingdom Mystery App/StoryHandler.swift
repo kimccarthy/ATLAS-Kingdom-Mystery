@@ -17,6 +17,7 @@ class Story{
     //this gets passed into the dialogue options part
     //theres an update boolean functions thing in here
     //passes in character id and dialogue option picked
+    let inv = Inventory();
     let b = Board();
     var progress = [Bool]();
     init(){
@@ -25,6 +26,28 @@ class Story{
         }
     }
     
+    func update(obj: Object){
+        var updated = progress;
+        if(obj.name=="crown"){//names might be full names?
+            updated[-1] = true;//fix these in a sec
+            obj.located();
+        }
+        else if(obj.name=="redBerries"){
+            updated[3] = true;
+            obj.located();
+        }
+        else if(obj.name=="invoice"){
+            updated[9] = true;
+            obj.located();
+        }
+        else if(obj.name=="recipe"){
+            updated[9] = true;
+            obj.located();
+        }
+        else if(obj.name=="chest"){
+            updated[-1] = true;
+        }
+    }
     
     func update(char: Char, option: String){
         //time to write down progress for literally the entire story
@@ -35,21 +58,27 @@ class Story{
         }
         if(char.name=="Princess" && option=="Crown"){
             updated[1] = true; //unlocks all throne rooms, other cities. moves princess
+            inv.crown.completed = true;
         }//object find in here: vault note. Updated[0]
         else if(char.name=="Alchemist" && option=="Who Are You?"){
             updated[2] = true;
+            inv.potion.located();
             //add in here to give you the potion which you will give to the raccoon. Unlocks potion dialogue.
         } //objects: redberries Updated[3]
         else if(char.name=="Thief" && option=="Potion"){
             updated[4] = true; //give potion, they give you the green berries.
+            inv.potion.completed = true;
+            inv.greenBerries.located();
         }
         else if(char.name=="Artist" && option=="Red Berries"){
             //update boolean 1
             updated[5] = true; //change background of town to add red. Need this and next intact to get cave dialogue
+            inv.redBerries.completed = true;
         }
         else if(char.name=="Artist" && option=="Green Berries"){
             //update boolean 1
             updated[6] = true; //same as above. both to disguise and get cave dialogue
+            inv.greenBerries.completed = true;
         }
         else if(char.name=="Blacksmith" && option=="Invoice"){
             updated[7] = true;
@@ -63,10 +92,12 @@ class Story{
         } //updated[9] -> cave reveals invoice and recipe
         else if(char.name=="Baker" && option=="Recipe"){
             updated[10] = true;
-            //gives cake item, but im tempted to just unlock the recipe dialogue for the priest.
+            //gives cake item, but im tempted to just unlock the recipe dialogue for the priest. CAKE ITEM
         }
         else if(char.name=="Priest" && option=="Recipe"){
             updated[11] = true;
+            inv.recipe.completed = true;
+            //inv.cake.completed = true;
             //unlocks statue missing
         }
         else if(char.name=="Thief" && option=="The Missing Statue"){
@@ -79,14 +110,17 @@ class Story{
         }//object: finding chest after statue thingy updated [14]
         else if(char.name=="Blacksmith" && option=="Chest"){
             updated[14] = true;
+            inv.letters.located();
             //opens letters dialogue
             //opens option to accuse
         }
         else if(char.name=="Alchemist"&&option=="Letters"){
             updated[15] = true;
+            inv.letters.completed = true;
         }
         else if(char.name=="Hero"&&option=="Letters"){
             updated[15] = true; //both this and the above lock the letters dialogue.
+            inv.letters.completed = true;
         }
        
         print(updated);
@@ -98,24 +132,33 @@ class Story{
         arr.append("Who Are You?");
         if let d = c.diamond{ if(d.count>0){arr.append("Diamond"); }}
         //conditional: if you find the crown
-        if let cr = c.crown{ if(cr.count>0){ arr.append("Crown"); }}
+        if(inv.crown.found && !inv.crown.completed){
+            if let cr = c.crown{ if(cr.count>0){ arr.append("Crown"); }}
+            //this might be the easier way of doing this.
+    
+        }
         //conditional: if you find the vault note
-        if let v = c.vaultNote{ if(v.count>0){arr.append("Note in the Vault");}}
+        if(inv.note.found){
+            if let v = c.vaultNote{ if(v.count>0){arr.append("Note in the Vault");}}
+        }
         if(c.name=="Artist"){
-            //conditional: if you have the berries in your possesion
-            if let r = c.redBerries{if(r.count>0){arr.append("The Red Berries");}}
+            if(inv.redBerries.found && !inv.redBerries.completed){
+                if let r = c.redBerries{if(r.count>0){arr.append("The Red Berries");}}
+            }
         } else{
-            //after talking to the penguin
+            //after talking to the penguin ***NEEDS AN UPDATE SLOT****
             if let g = c.redBerries{if(g.count>0){arr.append("The Red Berries");}}
         }
         if(c.name=="Artist"){
-            //conditional: if you have the berries in your possesion
-            if let g = c.greenBerries{if(g.count>0){arr.append("Green Berries");}}
+            if(inv.greenBerries.found && !inv.greenBerries.completed){
+                if let g = c.greenBerries{if(g.count>0){arr.append("Green Berries");}}
+                
+            }
         } else{
             //after talking to the penguin
             if let g = c.greenBerries{if(g.count>0){arr.append("Green Berries");}}
         }
-        if(progress[5]&&progress[6]){ //red berries and green berries
+        if(progress[5]&&progress[6]){ //red berries and green berries AND NEED AN UPDATE FOR THE EAGLE AND THE INVOICE
             if let d = c.disguising{if(d.count>0){arr.append("Disguising");}}
         }
         if(progress[8]){
@@ -123,9 +166,17 @@ class Story{
         }
         
         //conditional: found the invoice and recipe
-        if let i = c.invoice{if(i.count>0){arr.append("Invoice")}}
-        if let r = c.recipe{if(r.count>0){arr.append("Recipe")}}
-        if(progress[2]) {if let p = c.potion{if(p.count>0){arr.append("Potion")}}}
+        if(inv.invoice.found && !inv.invoice.completed){
+            //not positive about the completed but maybe to save space on the menu
+            //actually no if i don't complete then it'll be a hint that this is a clue needed
+            if let i = c.invoice{if(i.count>0){arr.append("Invoice")}}
+            
+        }
+        if(inv.recipe.found && !inv.recipe.completed){
+            if let r = c.recipe{if(r.count>0){arr.append("Recipe")}}
+        }
+        
+        if(progress[2] && !inv.potion.completed) {if let p = c.potion{if(p.count>0){arr.append("Potion")}}}
         
         
         //additional conditional:
@@ -136,7 +187,10 @@ class Story{
         
         //chest, letters
         //conditional, got chest
-        if let ch = c.chest{if(ch.count>0){arr.append("Chest")}}
+        if(inv.chest.found && !inv.chest.completed){
+            if let ch = c.chest{if(ch.count>0){arr.append("Chest")}}
+            
+        }
         
         if(progress[14] && !progress[15]){
             if let l = c.letters{if(l.count>0){arr.append("Letters")}}

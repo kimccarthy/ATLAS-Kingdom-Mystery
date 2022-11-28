@@ -108,7 +108,6 @@
 		63F97B6528F09D5600ACF15B = {
 			isa = PBXGroup;
 			children = (
-				6394D7A72931A70A00F86F98 /* Inventory.swift */,
 				63F97B7028F09D5600ACF15B /* Kingdom Mystery App */,
 				63F97B8128F09D5A00ACF15B /* Kingdom Mystery AppTests */,
 				63F97B8B28F09D5A00ACF15B /* Kingdom Mystery AppUITests */,
@@ -129,6 +128,7 @@
 		63F97B7028F09D5600ACF15B /* Kingdom Mystery App */ = {
 			isa = PBXGroup;
 			children = (
+				6394D7A72931A70A00F86F98 /* Inventory.swift */,
 				6394D7A52931263700F86F98 /* StoryHandler.swift */,
 				63F97B7128F09D5600ACF15B /* Kingdom_Mystery_AppApp.swift */,
 				63043B5728F4B34A00D29993 /* Parsing.swift */,
