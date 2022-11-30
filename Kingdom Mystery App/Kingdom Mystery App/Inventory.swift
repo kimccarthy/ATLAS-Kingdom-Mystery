@@ -21,7 +21,6 @@ class Object{
         completed = false;
     }
     func located(){
-        print("toggled from \(found)");
         found = true;
     }
     func lost(){
@@ -56,15 +55,12 @@ class Inventory{
         VStack{
             HStack{
                 ForEach(0..<3){i in
-                    var obj = self.obs[i];
+                    let obj = self.obs[i];
                     if(obj.found && !obj.completed){
-                        //Text("\(obj.name) is Found").foregroundColor(.gray);
                         Rectangle().fill(.gray).frame(width:50, height: 50);}
                     else if(!obj.found){
-                        // Text("\(obj.name) is Not Found").foregroundColor(.red);
                         Rectangle().fill(.red).frame(width:50, height: 50);}
                     else if (obj.found && obj.completed){
-                        //Text("\(obj.name) is Completed" ).foregroundColor(.green);
                         Rectangle().fill(.green).frame(width:50, height: 50);}
                     else{
                         Text("You've messed up");}
@@ -72,7 +68,7 @@ class Inventory{
             }
             HStack{
                 ForEach(3..<6){i in
-                    var obj = self.obs[i];
+                    let obj = self.obs[i];
                     if(obj.found && !obj.completed){
                         //Text("\(obj.name) is Found").foregroundColor(.gray);
                         Rectangle().fill(.gray).frame(width:50, height: 50);}
@@ -88,7 +84,7 @@ class Inventory{
             }
             HStack{
                 ForEach(6..<9){i in
-                    var obj = self.obs[i];
+                    let obj = self.obs[i];
                     if(obj.found && !obj.completed){
                         //Text("\(obj.name) is Found").foregroundColor(.gray);
                         Rectangle().fill(.gray).frame(width:50, height: 50);}
@@ -104,7 +100,7 @@ class Inventory{
             }
             HStack{
                 ForEach(9..<12){i in
-                    var obj = self.obs[i];
+                    let obj = self.obs[i];
                     if(obj.found && !obj.completed){
                         //Text("\(obj.name) is Found").foregroundColor(.gray);
                         Rectangle().fill(.gray).frame(width:50, height: 50);}

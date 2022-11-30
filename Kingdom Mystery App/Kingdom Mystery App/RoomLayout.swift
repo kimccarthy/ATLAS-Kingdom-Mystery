@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Room{
+class Room{
     var img: String
     var locked: Bool
     var characters: [Char]
@@ -16,15 +16,13 @@ struct Room{
         self.characters = c
         self.locked = false
     }
-    /*func unlock(){
-        locked = false
-    }
-    func lock(){
-        locked = true
-    }
     
-    func addCharacter(c: Char){ characters.append(c) }*/
+    /*func display(c: ContentView): some View{
+        
+    }*/ //TRANSFER TO THIS
+    func setChars(chrs: Array<Char>){ characters = chrs; }
 }
+
 
 class Board{
     var room1: Room
@@ -32,7 +30,7 @@ class Board{
     var room3: Room
     var room4: Room
     var rooms: [Room]
-    //var ch1: [Char]
+    
     
     init(){
         let ch = Char.chars
@@ -42,15 +40,15 @@ class Board{
                 c.append(charrr)
             }
             else{
-                print("Ah")
+                print("Error Appending Chars")
             }
         }
         self.room1 = Room(i:"rm1", c:[c[0]])
         self.room2 = Room(i:"rm2", c:[c[2], c[4], c[3]])
         self.room3 = Room(i:"rm3", c:[c[1], c[8]])
         self.room4 = Room(i:"rm4", c:[c[5], c[6], c[7]])
-        
-        //room1.addCharacter(c: c[0])
+        room3.locked = true;
+        room4.locked = true;
         rooms = [room1, room2, room3, room4]
         
     }

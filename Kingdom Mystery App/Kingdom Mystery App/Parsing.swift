@@ -56,16 +56,18 @@ struct Char: Codable{
 
        static func fromJSONFile(named name: String) -> Char? {
            if let data = Data.fromJSONFile(forName: name) {
-               print("Trying: \(name)")
+               //print("Trying: \(name)")
                return fromJSON(data: data)
            }
-           print(name)
+           //print(name)
            return nil
        }
     
     func dialogue(str: String)-> Array<String>?{
         //let arr:Array<String> ;
         switch(str){
+        case "...":
+            return ["..."];
         case "intro":
             return intro;
         case "initial":
@@ -99,31 +101,13 @@ struct Char: Codable{
             arr.append(" ");
             return arr
         
-                
-                /*var diamond: Array<String>?
-                 var vaultNote: Array<String>?
-                 var redBerries: Array<String>?
-                 var greenBerries: Array<String>?
-                 var disguising: Array<String>?
-                 var priest: Array<String>?
-                 var invoice: Array<String>?
-                 var potion: Array<String>?
-                 var recipe: Array<String>?
-                 var caves: Array<String>?
-                 var statueMissing: Array<String>?
-                 var statueSold: Array<String>?
-                 var statue: Array<String>?
-                 var chest: Array<String>?
-                 var letters:Array<String>?*/
-       // default: return nil;
         }
-        //return nil;
         var arr = [String]();
         arr.append(" ");
         return arr
     }
     
-    func getOptions() -> Array<String>{
+   /* func getOptions() -> Array<String>{
         
         //this will also include booleans in a second
         
@@ -147,6 +131,23 @@ struct Char: Codable{
         return str;
         
         
-    }
+    }*/
     
+}
+
+
+class Monarch{
+    var img: String;
+    var id: Int;
+    var dial: Array<String>;
+    var acc: Array<String>?;
+    init(i: String, d: Int, dl: Array<String>){
+        img = i;
+        id = 0;
+        dial = dl;
+        if(id==0){
+            acc = ["You choose to accuse? Think carefully, this cannot be undone.", "Would you like to proceed?"];
+        }
+        else{acc = nil; }
+    }
 }
