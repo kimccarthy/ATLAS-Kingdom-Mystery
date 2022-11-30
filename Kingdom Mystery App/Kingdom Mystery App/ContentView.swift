@@ -204,7 +204,7 @@ struct  ContentView: View {
     
     @State var tog = false; //toggle dialogue box
     @State var curr_dial = [String](); //current spoken dialogue
-    @State var refresh = true; //general refresh
+    //@State var refresh = true; //general refresh
     @State var strNum = 0; //index of dialogue currently spoken
     
     func showMyBoy(str: Array<String>)-> some View{ //dialogue box toggler
@@ -219,7 +219,7 @@ struct  ContentView: View {
                     Button("<"){
                         if(strNum==0) { strNum=0; }
                         else{ strNum-=1;}
-                        refresh.toggle();
+                        self.refresh();
                     }
                     Text("\(strNum+1)/\(str.count)");
                     Button(">"){
@@ -228,7 +228,7 @@ struct  ContentView: View {
                             tog.toggle()
                         }
                         else{ strNum+=1 }
-                        refresh.toggle();
+                        self.refresh();
                     }
                 }
             }
@@ -377,6 +377,11 @@ struct  ContentView: View {
         }
     }
     
+    func refresh(){ //these 3 codes are the stupidest thing i have ever written but it's the only way they would work.
+        let temp: Int = page;
+        page = 0;
+        page = temp;
+    }
     var lake: some View{
         HStack{
             //objects found here:
@@ -390,24 +395,19 @@ struct  ContentView: View {
                 });
             } label:{
                 Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-            } //this is so repetitive
-            if(!crown.found){ //CURRENTLY NOT REFRESHING PROPERLY
+            }
                 Button{
                     crown.located();
-                    tog = false;
-                    page = 6;
-                    refresh.toggle();
-                } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
-            } else{
-                Rectangle().fill(.blue).frame(width:40, height:40);
-            }
+                    self.refresh();
+                } label:{
+                    if(!crown.found){Rectangle().fill(.red).frame(width:40, height:40)}
+                    else{Rectangle().fill(.blue).frame(width:40, height:40);}
+                }
             
             if(!redBerries.found){ //CURRENTLY NOT REFRESHING PROPERLY
                 Button{
                     redBerries.located();
-                    refresh.toggle();
-                    tog = false;
-                    page = 6;
+                    self.refresh();
                 } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
             } else{
                 Rectangle().fill(.blue).frame(width:40, height:40);
@@ -436,6 +436,7 @@ struct  ContentView: View {
                 Button{
                     recipe.located();
                     invoice.located();
+                    self.refresh();
                 
                 } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
             } else{
@@ -466,6 +467,7 @@ struct  ContentView: View {
             if(!chest.found){ //CURRENTLY NOT REFRESHING PROPERLY
                 Button{
                     chest.located();
+                    self.refresh();
                     
                 } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
             } else{
