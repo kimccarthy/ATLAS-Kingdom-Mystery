@@ -88,17 +88,14 @@ struct  ContentView: View {
         HStack(spacing: -27){
             //red
             Group{
-                Button(action:{ if(!s.b.room2.locked){ page = 2 }}){
+                Button(action:{ page = 2 }){
                     Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:-40);
                     //Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small).offset(x:0, y:-50)
                 }
-                Button{ if(!s.b.room2.locked){ page = 6 } } label:{
-                    if(s.b.room2.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70);
-                    }
-                    else{ Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:40); }
-                }
-                Button{ if(!s.b.room2.locked){ page = 6 } } label:{
-                    if(s.b.room2.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70);
+                Button{ page = 6 } label:{ Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:40); }
+                
+                Button{ if(!s.b.room2.locked){ page = 9 } } label:{
+                    if(s.b.room2.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);
                     }
                     else{ Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:-40); }
                 }
@@ -146,69 +143,22 @@ struct  ContentView: View {
             }
         }
     }
-   /* var map: some View{ //These will all be map image icons. For now they are color coded by city
-        VStack{
-            Text("Map");
-            HStack{
-                Button{
-                    if(!s.b.room2.locked){ page = 2 }
-                } label:{
-                    if(s.b.room2.locked){ Rectangle().fill(.gray).frame(width: 50, height: 50); }
-                    else{ Rectangle().fill(lochanRed).frame(width: 50, height: 50); }
-                }
-                Button{ if(!s.b.room1.locked){ page = 6 }
-                } label:{
-                    if(s.b.room2.locked){ Rectangle().fill(.gray).frame(width: 50, height: 50);
-                    }
-                    else{ Rectangle().fill(lochanRed).frame(width: 50, height: 50); }
-                }
-            }
-            HStack{
-                Button{
-                    if(!s.b.room3.locked){ page = 4 }
-                } label:{
-                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 50, height: 50); }
-                    else{ Rectangle().fill(sliavhBlue).frame(width: 50, height: 50); }
-                }
-                Button{
-                    if(!s.b.room3.locked){ page = 7 }
-                } label:{
-                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 50, height: 50); }
-                    else{ Rectangle().fill(sliavhBlue).frame(width: 50, height: 50); }
-                }
-            }
-            HStack{
-                Button{
-                    if(!s.b.room4.locked){ page = 3 }
-                } label:{
-                    if(s.b.room4.locked){ Rectangle().fill(.gray).frame(width: 50, height: 50);}
-                    else{ Rectangle().fill(foroiseGreen).frame(width: 50, height: 50);}
-                }
-                Button{
-                    if(!s.b.room4.locked){ page = 8 }
-                } label:{
-                    if(s.b.room4.locked){ Rectangle().fill(.gray).frame(width: 50, height: 50);}
-                    else{ Rectangle().fill(foroiseGreen).frame(width: 50, height: 50); }
-                }
-            }
-            HStack{
-                Button{
-                    if(!s.b.room1.locked){ page = 1 }
-                } label:{ if(s.b.room1.locked){ Rectangle().fill(.gray).frame(width: 50, height: 50); }
-                    else{ Rectangle().fill(.brown).frame(width: 50, height: 50); }
-                }
-            }
-        }
-    }*/
-    
     
     @State var tog = false; //toggle dialogue box
     @State var curr_dial = [String](); //current spoken dialogue
-    //@State var refresh = true; //general refresh
     @State var strNum = 0; //index of dialogue currently spoken
+    @State var diamondActivated = false;
     
-    func showMyBoy(str: Array<String>)-> some View{ //dialogue box toggler
-        var ye: some View{
+    //***HELPERS***
+    
+    func refresh(){ //these 3 lines of code are the stupidest thing i have ever written but it's the only way they would work.
+        let temp: Int = page;
+        page = 0;
+        page = temp;
+    }
+    
+    func showDialogueBox(str: Array<String>)-> some View{ //dialogue box toggler
+        var dialBox: some View{
             VStack{
                 ZStack{
                     if(strNum<str.count){
@@ -226,6 +176,7 @@ struct  ContentView: View {
                         if(strNum==str.count-1){
                             strNum = 0;
                             tog.toggle()
+                            self.refresh();
                         }
                         else{ strNum+=1 }
                         self.refresh();
@@ -233,7 +184,7 @@ struct  ContentView: View {
                 }
             }
         }
-        return ye;
+        return dialBox;
     }
     
    
@@ -241,18 +192,10 @@ struct  ContentView: View {
         ZStack{
             let ch = s.b.room1.characters
                 HStack{
-                    Menu{
-                        Button("Inventory", action:{page = 5});
-                        Button("Map", action:{
-                            page = 0
-                            tog = false;
-                        });
-                    } label:{
-                        Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-                    }
-                    ForEach(0..<ch.count){ k in
+                    playerChar;
+                    ForEach(0..<ch.count, id: \.self){ k in
                         Menu{
-                            ForEach(0..<s.options(c: ch[k]).count){ i in
+                            ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
                                 Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
                                     curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
                                     s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
@@ -266,25 +209,17 @@ struct  ContentView: View {
                         }
                     }
                 }
-            if(tog){ showMyBoy(str: curr_dial); }
+            if(tog){ showDialogueBox(str: curr_dial); }
         }
     }
     var room2: some View{
         ZStack{
             let ch = s.b.room2.characters;
             HStack(spacing: 80){
-                    Menu{
-                        Button("Inventory", action:{page = 5});
-                        Button("Map", action:{
-                            page = 0
-                            tog = false;
-                        });
-                    } label:{
-                        Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-                    }
-                    ForEach(0..<ch.count){ k in
+                playerChar;
+                    ForEach(0..<ch.count, id: \.self){ k in
                         Menu{
-                            ForEach(0..<s.options(c: ch[k]).count){ i in
+                            ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
                                 Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
                                     curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
                                     s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
@@ -300,34 +235,35 @@ struct  ContentView: View {
                     }
                     }
             
-            if(tog){ showMyBoy(str: curr_dial); }
+            if(tog){ showDialogueBox(str: curr_dial); }
         }
     }
-    
+    var playerChar: some View{
+        Menu{
+            Button("Inventory", action:{page = 5});
+            Button("Map", action:{
+                page = 0;
+                tog = false;
+            });
+        } label:{
+            Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+        }
+    }
     var room3: some View{
         ZStack{
             //returnTo = 3;
             let ch = s.b.room3.characters
             //VStack{
             HStack(spacing: 80){
-                Menu{
-                    Button("Inventory", action:{page = 5});
-                    Button("Map", action:{
-                        page = 0;
-                        tog = false;
-                    });
-                } label:{
-                    Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-                }
-                ForEach(0..<ch.count){ k in
+                playerChar;
+                ForEach(0..<ch.count, id: \.self){ k in
                     Menu{
-                        ForEach(0..<s.options(c: ch[k]).count){ i in
+                        ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
                             Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: { //BREAK HERE OMETHING HAPPENED!!!!
                                 curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
                                 s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
                                 tog = true;
                                 strNum = 0;
-                                //print(tog, curr_dial);
                             }
                             );
                         }
@@ -337,27 +273,19 @@ struct  ContentView: View {
                     
                 }}
             if(tog){
-                showMyBoy(str: curr_dial);
+                showDialogueBox(str: curr_dial);
             }
         }
     }
-    
+   
     var room4: some View{
         ZStack{
             let ch = s.b.room4.characters
                 HStack(spacing: 80){
-                    Menu{
-                        Button("Inventory", action:{page = 5});
-                        Button("Map", action:{
-                            page = 0
-                            tog = false;
-                        });
-                    } label:{
-                        Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-                    }
-                    ForEach(0..<ch.count){ k in
+                    playerChar;
+                    ForEach(0..<ch.count, id: \.self){ k in
                         Menu{
-                            ForEach(0..<s.options(c: ch[k]).count){ i in
+                            ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
                                 Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
                                     curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
                                     s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
@@ -373,74 +301,119 @@ struct  ContentView: View {
                     }
                 }
             
-            if(tog){ showMyBoy(str: curr_dial); }
+            if(tog){ showDialogueBox(str: curr_dial); }
         }
     }
     
-    func refresh(){ //these 3 codes are the stupidest thing i have ever written but it's the only way they would work.
-        let temp: Int = page;
-        page = 0;
-        page = temp;
-    }
-    var lake: some View{
-        HStack{
-            //objects found here:
-            let crown = s.inv.crown;
-            let redBerries = s.inv.redBerries;
-            Menu{
-                Button("Inventory", action:{page = 5});
-                Button("Map", action:{
-                    page = 0
-                    tog = false;
-                });
-            } label:{
-                Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+    
+    
+    var redRoyal: some View{
+        ZStack{
+            HStack{
+                let vaultNote = s.inv.note;
+                playerChar;
+                if(!vaultNote.found){
+                    Button{
+                        vaultNote.located();
+                        self.refresh();
+                    } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
+                } else{
+                    Rectangle().fill(.blue).frame(width:40, height:40);
+                }
+                
+                Button{
+                    if(!s.storyStart){
+                        //diamondActivated = true;
+                        tog = true;
+                        curr_dial = s.b.monarch1.dial;
+                        s.b.room3.locked = false;
+                        s.b.room4.locked = false;
+                        s.storyStart = true;
+                        self.refresh();
+                    }
+                    else{
+                        if(!tog){
+                            tog = true;
+                            curr_dial = s.b.monarch1.idle;
+                            self.refresh();
+                        }
+                    }
+                } label:{
+                    Image(s.b.monarch1.img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                }
+                
             }
+            if(tog){
+                showDialogueBox(str: curr_dial);
+            }
+            
+        }
+    }
+    
+    var lake: some View{
+        ZStack{
+            HStack{
+                //objects found here:
+                let crown = s.inv.crown;
+                let redBerries = s.inv.redBerries;
+                playerChar;
                 Button{
                     crown.located();
+                    tog = false;
+                    curr_dial = ["You picked up a CROWN"]
+                    tog = true;
                     self.refresh();
                 } label:{
                     if(!crown.found){Rectangle().fill(.red).frame(width:40, height:40)}
                     else{Rectangle().fill(.blue).frame(width:40, height:40);}
                 }
-            
-            if(!redBerries.found){ //CURRENTLY NOT REFRESHING PROPERLY
-                Button{
-                    redBerries.located();
-                    self.refresh();
-                } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
-            } else{
-                Rectangle().fill(.blue).frame(width:40, height:40);
+                
+                if(!redBerries.found){
+                    Button{
+                        redBerries.located();
+                        tog = false;
+                        curr_dial = ["You picked up RED BERRIES from the bush."];
+                        tog = true;
+                        self.refresh();
+                    } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
+                } else{
+                    Rectangle().fill(.blue).frame(width:40, height:40);
+                }
+            }
+            if(tog){
+                showDialogueBox(str: curr_dial)
             }
         }
         
     }
     var caves: some View{
-        HStack{
-            let recipe = s.inv.recipe;
-            let invoice = s.inv.invoice;
-            //gotta make a chest or paper pile image that encompasses the above.
-            //big problem here is puzzle.
-            //layout: first, a cave. on click, puzzle.
-            //second, an open cave. inside, the pile of papers. On click, recieve the documents.
-            Menu{
-                Button("Inventory", action:{page = 5});
-                Button("Map", action:{
-                    page = 0
-                    tog = false;
-                });
-            } label:{
-                Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-            }
-            if(!recipe.found){ //CURRENTLY NOT REFRESHING PROPERLY
-                Button{
-                    recipe.located();
-                    invoice.located();
-                    self.refresh();
+        ZStack{
+            HStack{
+                let recipe = s.inv.recipe;
+                let invoice = s.inv.invoice;
+                //gotta make a chest or paper pile image that encompasses the above.
+                //big problem here is puzzle.
+                //layout: first, a cave. on click, puzzle.
+                //second, an open cave. inside, the pile of papers. On click, recieve the documents.
                 
-                } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
-            } else{
-                Rectangle().fill(.blue).frame(width:70, height:70);
+                //at this point, "you type in the code.... PYRO"
+                
+                playerChar;
+                if(!recipe.found){
+                    Button{
+                        recipe.located();
+                        invoice.located();
+                        curr_dial = ["The cave unlocks! Inside is a...massive pile of junk.", "There's not much here. You rummage around in hopes of finding something decent.", "All you can find is a RECIPE and an INVOICE"]
+                        tog = true;
+                        self.refresh();
+                        
+                    } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
+                } else{
+                    Rectangle().fill(.blue).frame(width:70, height:70);
+                }
+            }
+            if(tog){
+                showDialogueBox(str: curr_dial)
             }
         }
     }
@@ -455,15 +428,7 @@ struct  ContentView: View {
             //On placing, pedestal for statue opens and there's a chest.
             //need pedestal image.
             let chest = s.inv.chest;
-            Menu{
-                Button("Inventory", action:{page = 5});
-                Button("Map", action:{
-                    page = 0
-                    
-                });
-            } label:{
-                Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
-            }
+            playerChar;
             if(!chest.found){ //CURRENTLY NOT REFRESHING PROPERLY
                 Button{
                     chest.located();
@@ -473,7 +438,8 @@ struct  ContentView: View {
             } else{
                 Rectangle().fill(.blue).frame(width:70, height:70);
             }
-            
+            //if statue completed
+            //if statue found: on click statue completed. if statue completed,
         }
     }
     
@@ -509,7 +475,16 @@ struct  ContentView: View {
             else if(page==8){
                 mountain
             }
-            
+            else if(page==9){
+                redRoyal
+            }
+            else if(page==10){
+                //blueRoayl
+                redRoyal
+            }
+            else if(page==11){
+                redRoyal
+            }
             
         }
         

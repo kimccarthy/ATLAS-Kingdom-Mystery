@@ -25,6 +25,7 @@ class Story{
             progress.append(false);
         }
     }
+    var storyStart = false;
     
     func update(char: Char, option: String){
         //time to write down progress for literally the entire story
@@ -35,8 +36,9 @@ class Story{
         if(char.name=="Princess" && option=="Crown"){
             updated[1] = true; //unlocks all throne rooms, other cities. moves princess
             inv.crown.completed = true;
-            b.room3.locked = false; //these will change upon throne room
-            b.room4.locked = false;
+            b.room2.locked = false;
+            //b.room3.locked = false; //these will change upon throne room
+            //b.room4.locked = false;
         }
         else if(char.name=="Alchemist" && option=="Who Are You?"){ //Unlocks potion dialogue.
             updated[2] = true;
@@ -103,8 +105,11 @@ class Story{
     func options(c:Char)->Array<String>{ //this is checking boolean AND object progress
         var arr = [String]();
         arr.append("Who Are You?");
-        if let d = c.diamond{ if(d.count>0){arr.append("Diamond"); }}
-    
+        if(storyStart){
+            if let d = c.diamond{ if(d.count>0){arr.append("Diamond"); }}
+            
+        }
+        
         //when you find crown, unlock crown dialogue. Locks on completion
         if(inv.crown.found && !inv.crown.completed){
             if let cr = c.crown{ if(cr.count>0){ arr.append("Crown"); }}

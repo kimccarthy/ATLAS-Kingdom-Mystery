@@ -141,10 +141,12 @@ class Monarch{
     var id: Int;
     var dial: Array<String>;
     var acc: Array<String>?;
-    init(i: String, d: Int, dl: Array<String>){
+    var idle: Array<String>;
+    init(i: String, d: Int, dl: Array<String>, idl: Array<String>){
         img = i;
         id = 0;
         dial = dl;
+        idle = idl;
         if(id==0){
             acc = ["You choose to accuse? Think carefully, this cannot be undone.", "Would you like to proceed?"];
         }

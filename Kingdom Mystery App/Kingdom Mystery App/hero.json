@@ -19,6 +19,6 @@
     "statueSold":["The thief stole and sold the monument? I am disappointed, but not surprised. It’s in his nature. I have yet to see it, but will alert you the second I do. Good luck, Traveler."],
     "statue":["You found the statue? Huzzah! Excellent work!","It was with the Alchemist of Foroise?","...I see. She’s a friend of mine. A girl with a massive heart, if a bit naive. I doubt she recognized it when she bought it from the thief."],
     "chest":["There was a chest under the statue? That’s odd. I knew the statue used to live in the mountains, but I didn’t realize it held a vault."],
-    "letters":["These letters. How did you open the chest?","I mean-","There was something else in the chest, wasn’t there.","Please, I am begging you, do not implicate her in this. She did not do this.","As a favor, I ask for your discretion. And I will be taking these letters."]
+    "letters":["These letters. How did you open the chest?","I mean-","There was something else in the chest, wasn’t there.","Please, I am begging you, do not implicate her in this. She did not do this.","As a favor, I ask for your discretion. And I will be taking these letters.","[Tigros takes your LETTERS.]"]
     
 }

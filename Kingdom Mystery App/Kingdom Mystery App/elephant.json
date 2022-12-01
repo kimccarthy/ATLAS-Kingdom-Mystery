@@ -3,7 +3,7 @@
     "img": "elephant",
     "img2": "",
     "intro": ["Well hi there! How's it going?"],
-    "initial":["Oh my, who are you? Are you a customer, after all these years??","YAY!!! Hi hi hi. I'm the resident Alchemist of Foroise, Leeda!", "Here, have this. I've been dying to give it to someone.","Sorry if I'm coming across a bit strong. It's just been ages since I've seen someone new."],
+    "initial":["Oh my, who are you? Are you a customer, after all these years??","YAY!!! Hi hi hi. I'm the resident Alchemist of Foroise, Leeda!", "Here, have this. I've been dying to give it to someone.","Sorry if I'm coming across a bit strong. It's just been ages since I've seen someone new.", "[Leeda gives you a glowing POTION. It looks...gooey.]"],
     "crown":[],
     "diamond":["The Diamond of Lochan? I wish I knew more. All I can tell you is that those fools from Sliavh keep saying that WE did it! Why would our great King steal? It wasn’t us!","You’re trying to find it? Good!","You can finally clear our name!","Where was I? I was on a date that night! I never saw the guy again, he ended up behind a different wall. I miss him, but I know that this is for the best."],
     "vaultNote": ["There was a note in the vault with the diamond? Wow. Look at that","I don’t know who did this, but I hope you find out soon!"] ,
@@ -16,9 +16,9 @@
     "recipe": ["Ooo is this for caramel cake crisp? I used to love this!", "Mr. Baker used to make this for everyone once a year! We all loved it! Me and Mr. Father Priest Man used to try to convince him to give us seconds. It worked a few times!", "That was before Mr. Father Priest Man fell asleep."],
     "caves":["The Caves? I’ve been out a few times to see the stones, but don’t know much about them."],
     "statueMissing": ["A stolen statue? Sorry, I don’t know much about that."],
-    "statueSold": ["“A statue that Mr. Raccoon sold? Oh, he sold that to me! I didn’t know it was stolen, I’m so sorry! Here, take this!"],
+    "statueSold": ["“A statue that Mr. Raccoon sold? Oh, he sold that to me! I didn’t know it was stolen, I’m so sorry! Here, take this!","[Leeda hands you the MISSING STATUE]"],
     "statue": ["I’m sorry, I didn’t know it was stolen! I was just using it as decoration, feel free to take it elsewhere!"],
     "chest": ["The statue unlocked a vault that had a chest? My stars, I didn’t realize that I was holding onto a key!", "I don’t know about opening it though, sorry."],
-    "letters": ["HEY! Where’d you get those?! Those are personal! Give them back!"]
+    "letters": ["HEY! Where’d you get those?! Those are personal! Give them back!", "[Leeda takes your LETTERS. Er... *her* letters]"]
     
 }

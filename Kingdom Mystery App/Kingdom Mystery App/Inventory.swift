@@ -30,7 +30,6 @@ class Object{
 
 }
 
-//thinking of a decorator class here, but would need to init with story
 
 class Inventory{
     var crown = Object(i: "crown", s: "crown_sil", n: "Crown of Lochan");
@@ -44,74 +43,44 @@ class Inventory{
     var chest = Object(i: "chest", s: "chest_sil", n:"Mysterious Chest");
     var letters = Object(i: "letters", s: "letters_sil", n: "Letters");
     var cake = Object(i: "cake", s: "cake_sil", n:"Caramel Cake Crisp");
-    var diamond = Object(i: "diamond", s: "diamond_sil", n: "The Diamond of Lochan");//tempted to ditch the silhouette in favor of a ?
-    //maybe add diamond, cake? makes 12 rn. Good. 
+    var diamond = Object(i: "diamond", s: "diamond_sil", n: "The Diamond of Lochan");
     var obs: Array<Object>;
     init(){
         obs = [crown, note, potion, redBerries, greenBerries, recipe, invoice, cake, statue, chest, letters, diamond];
     }
     
+    func objColor(obj: Object)->Color{ //this will be image in a sec
+        if(obj.found && !obj.completed){return .gray}
+        else if(!obj.found){return .red}
+        else if(obj.found && obj.completed){return .green}
+        else{return .blue}//should never hit
+    }
+    
+    //cmon you can do better than this.
     func display(c: ContentView, ret: Int)-> some View{
         VStack{
             HStack{
                 ForEach(0..<3){i in
                     let obj = self.obs[i];
-                    if(obj.found && !obj.completed){
-                        Rectangle().fill(.gray).frame(width:50, height: 50);}
-                    else if(!obj.found){
-                        Rectangle().fill(.red).frame(width:50, height: 50);}
-                    else if (obj.found && obj.completed){
-                        Rectangle().fill(.green).frame(width:50, height: 50);}
-                    else{
-                        Text("You've messed up");}
+                    Rectangle().fill(self.objColor(obj:obj)).frame(width: 50, height: 50);
                 }
             }
             HStack{
                 ForEach(3..<6){i in
                     let obj = self.obs[i];
-                    if(obj.found && !obj.completed){
-                        //Text("\(obj.name) is Found").foregroundColor(.gray);
-                        Rectangle().fill(.gray).frame(width:50, height: 50);}
-                    else if(!obj.found){
-                        // Text("\(obj.name) is Not Found").foregroundColor(.red);
-                        Rectangle().fill(.red).frame(width:50, height: 50);}
-                    else if (obj.found && obj.completed){
-                        //Text("\(obj.name) is Completed" ).foregroundColor(.green);
-                        Rectangle().fill(.green).frame(width:50, height: 50);}
-                    else{
-                        Text("You've messed up");}
+                    Rectangle().fill(self.objColor(obj:obj)).frame(width: 50, height: 50);
                 }
             }
             HStack{
                 ForEach(6..<9){i in
                     let obj = self.obs[i];
-                    if(obj.found && !obj.completed){
-                        //Text("\(obj.name) is Found").foregroundColor(.gray);
-                        Rectangle().fill(.gray).frame(width:50, height: 50);}
-                    else if(!obj.found){
-                        // Text("\(obj.name) is Not Found").foregroundColor(.red);
-                        Rectangle().fill(.red).frame(width:50, height: 50);}
-                    else if (obj.found && obj.completed){
-                        //Text("\(obj.name) is Completed" ).foregroundColor(.green);
-                        Rectangle().fill(.green).frame(width:50, height: 50);}
-                    else{
-                        Text("You've messed up");}
+                    Rectangle().fill(self.objColor(obj:obj)).frame(width: 50, height: 50);
                 }
             }
             HStack{
                 ForEach(9..<12){i in
                     let obj = self.obs[i];
-                    if(obj.found && !obj.completed){
-                        //Text("\(obj.name) is Found").foregroundColor(.gray);
-                        Rectangle().fill(.gray).frame(width:50, height: 50);}
-                    else if(!obj.found){
-                        // Text("\(obj.name) is Not Found").foregroundColor(.red);
-                        Rectangle().fill(.red).frame(width:50, height: 50);}
-                    else if (obj.found && obj.completed){
-                        //Text("\(obj.name) is Completed" ).foregroundColor(.green);
-                        Rectangle().fill(.green).frame(width:50, height: 50);}
-                    else{
-                        Text("You've messed up");}
+                    Rectangle().fill(self.objColor(obj:obj)).frame(width: 50, height: 50);
                 }
             }
             Button("< Back"){
@@ -119,6 +88,15 @@ class Inventory{
             }
         }
         
+    }
+    
+    func zoomView(obj: Object, c: ContentView)-> some View{
+        VStack{
+            Rectangle().fill(objColor(obj: obj)).frame(width:200, height:200);
+            Button("< Back"){
+                c.page = 5;
+            }
+        }
     }
     
 }
