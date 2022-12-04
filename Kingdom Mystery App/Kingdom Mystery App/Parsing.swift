@@ -106,33 +106,7 @@ struct Char: Codable{
         arr.append(" ");
         return arr
     }
-    
-   /* func getOptions() -> Array<String>{
-        
-        //this will also include booleans in a second
-        
-        var str = [String]();
-        if(crown!.count>0){ str.append("Crown") }
-        if(diamond!.count>0){str.append("Diamond")}
-        if(vaultNote!.count>0){str.append("Note in the Vault")}
-        if(redBerries!.count>0){str.append("Red Berries")}
-        if(greenBerries!.count>0){str.append("Green Berries")}
-        if(disguising!.count>0){str.append("Disguises")}
-        if(priest!.count>0){str.append("The Priest")}
-        if(invoice!.count>0){str.append("Invoice")}
-        if(potion!.count>0){str.append("Potion")}
-        if(recipe!.count>0){str.append("Recipe")}
-        if(caves!.count>0){str.append("Caves")}
-        if(statueMissing!.count>0){str.append("Missing Statue")}
-        if(statueSold!.count>0){str.append("Sold Statue")}
-        if(statue!.count>0){str.append("Statue")}
-        if(chest!.count>0){str.append("Chest")}
-        if(letters!.count>0){str.append("Letters")}
-        return str;
-        
-        
-    }*/
-    
+
 }
 
 

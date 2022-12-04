@@ -56,9 +56,9 @@ class Board{
                 print("Error Appending Chars")
             }
         }
-        self.monarch1 = Monarch(i: "penguin", d:0, dl: mon1, idl: idle1);
-        self.monarch2 = Monarch(i: "penguin", d:0, dl: mon2, idl: idle2);
-        self.monarch3 = Monarch(i: "penguin", d:0, dl: mon3, idl: idle3);
+        self.monarch1 = Monarch(i: "lionking", d:0, dl: mon1, idl: idle1);
+        self.monarch2 = Monarch(i: "raven", d:1, dl: mon2, idl: idle2);
+        self.monarch3 = Monarch(i: "deer", d:2, dl: mon3, idl: idle3);
         self.room1 = Room(i:"rm1", c:[c[0]]) //beaver
         self.room2 = Room(i:"rm2", c:[c[2], c[4], c[3]]) //i think hero princess baker
         self.room3 = Room(i:"rm3", c:[c[1], c[6], c[8]]) //elephant, priest, thief

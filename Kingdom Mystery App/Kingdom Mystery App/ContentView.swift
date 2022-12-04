@@ -7,64 +7,18 @@
 
 
 /**
+Remaining Assets:
+ - Paper pile
+ - Cave
+ - Vault Note Inv
+ - checkmark
+- Letters
+ - Invoice
  
- NOTES TO SELF:
- 
- Assets Needed:
- - Objects:
-        - Diamond
-        - Potion
-        - Note
-        - Red Berries
-        - Green Berries
-        - Invoice
-        - Recipe
-        - Crown
-        - Statue
-        - Letters
-        - Chest
-        - Cake??
- - Backgrounds:
-     - Lochan Main
-     - Sliavh Main (x3? I'm tempted to change the dialogue.)
-     - Foroise Main
-     - Throne Room (x3, different colors for decorations (dark gray back?)
-     - Lake
-     - Cave
-     - Mountain
- 
- PEOPLE:
- - Lioness (with/without crown?)
- - Elephant
- - Royalty (lion/deer)
- 
- Various and Assorteds:
-    - Red Berry bushes (with and without the berries on them)
-    - Pedestals:
-            - For statue
-            - For diamond (that has vault note currently)
- - Map Icons
- - Map Background
- - Inventory Background
- - Cake object???
- - locking rooms (i mean this will just be one boolean unlocked after the king talks in lochan)
- - Once you have the king, diamond toggle for dialogue.
- - priest is in the wrong room i REPEAT PRIEST IS IN THE WRONG ROOM
-            -
- 
- 
- THINGS TO DO:
- - Figure out refresh issue
- - Royalty
- - Obviously import everything file wise. Dumbass bitch didn't download the pixel art app. Do at O's tomorrow?
- - Overloaded update function which will probably be my task right now. Then adjusting story/length as need be.
- - Add dialogue boxes for finding objects or story progression beyond talking to NPCs
- - Or at the very least add an "[_____ ADDED TO INVENTORY] _ for NPC dialogue.
- - When have wifi, find if there's a way to use device length/width for placing stuff
- - Cake object????
- - Moving characters between rooms.
- - Inventory toggle is fucky
- - NEED A RELIABLE REFRESH AFTER EACH DIALOGUE THING
+ Need to solve:
+ - Characters moving
+ - That one seg fault
+ - Making sure strNum is reset
  
  */
 
@@ -94,8 +48,9 @@ struct  ContentView: View {
                 }
                 Button{ page = 6 } label:{ Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:40); }
                 
-                Button{ if(!s.b.room2.locked){ page = 9 } } label:{
-                    if(s.b.room2.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);
+                //Button{ if(!s.b.room2.locked){ page = 9 } }
+                Button{ if(true){ page = 9 } }label:{
+                    if(/*s.b.room2.locked*/true){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);
                     }
                     else{ Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:-40); }
                 }
@@ -103,16 +58,18 @@ struct  ContentView: View {
             Spacer();
             //green
             Group{
-                Button{ if(!s.b.room3.locked){ page = 4 } } label:{
-                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
+                //Button{ if(!s.b.room3.locked){ page = 4 } }
+                Button{ if(true){ page = 4 } }label:{
+                    if(/*s.b.room3.locked*/false){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
                     else{ Rectangle().fill(sliavhBlue).frame(width: 70, height: 70).offset(x:0, y:40); }
                 }
-                Button{ if(!s.b.room3.locked){ page = 7 }} label:{
-                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40); }
+                //Button{ if(!s.b.room3.locked){ page = 7 }}
+                Button{ if(true){ page = 8 }} label:{
+                    if(/*s.b.room3.locked*/false){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40); }
                     else{ Rectangle().fill(sliavhBlue).frame(width: 70, height: 70).offset(x:0, y:-40); }
                 }
-                Button{ if(!s.b.room3.locked){ page = 7 }} label:{
-                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
+                Button{ if(/*!s.b.room3.locked*/true){ page = 8 }} label:{
+                    if(/*s.b.room3.locked*/false){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
                     else{ Rectangle().fill(sliavhBlue).frame(width: 70, height: 70).offset(x:0, y:40); }
                 }
                 
@@ -124,13 +81,13 @@ struct  ContentView: View {
                     else{ Rectangle().fill(foroiseGreen).frame(width: 70, height: 70).offset(x:0, y:-40);}
                 }
                 Button{
-                    if(!s.b.room4.locked){ page = 8 }
+                    if(!s.b.room4.locked){ page = 7 }
                 } label:{
                     if(s.b.room4.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40);}
                     else{ Rectangle().fill(foroiseGreen).frame(width: 70, height: 70).offset(x:0, y:40); }
                 }
                 Button{
-                    if(!s.b.room4.locked){ page = 8 }
+                    if(!s.b.room4.locked){ page = 7 }
                 } label:{
                     if(s.b.room4.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);}
                     else{ Rectangle().fill(foroiseGreen).frame(width: 70, height: 70).offset(x:0, y:-40); }
@@ -192,7 +149,7 @@ struct  ContentView: View {
         ZStack{
             let ch = s.b.room1.characters
                 HStack{
-                    playerChar;
+                    playerChar();
                     ForEach(0..<ch.count, id: \.self){ k in
                         Menu{
                             ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
@@ -205,7 +162,7 @@ struct  ContentView: View {
                                 );
                             }
                         } label:{
-                            Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                            Image(ch[k].img).resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color: .black, radius: 10)
                         }
                     }
                 }
@@ -213,10 +170,11 @@ struct  ContentView: View {
         }
     }
     var room2: some View{
+        Image("redtown").resizable().opacity(0.7).ignoresSafeArea().overlay(
         ZStack{
             let ch = s.b.room2.characters;
             HStack(spacing: 80){
-                playerChar;
+                playerChar().offset(x: 0, y:50);
                     ForEach(0..<ch.count, id: \.self){ k in
                         Menu{
                             ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
@@ -229,16 +187,17 @@ struct  ContentView: View {
                                 );
                             }
                         } label:{
-                            Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                            Image(ch[k].img).resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color: .black, radius: 10)
                         }
                         
                     }
                     }
             
             if(tog){ showDialogueBox(str: curr_dial); }
-        }
+        })
     }
-    var playerChar: some View{
+   
+    func playerChar()-> some View{
         Menu{
             Button("Inventory", action:{page = 5});
             Button("Map", action:{
@@ -246,20 +205,21 @@ struct  ContentView: View {
                 tog = false;
             });
         } label:{
-            Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+            Image("redpanda").resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color: .black, radius: 10)
         }
     }
     var room3: some View{
+        Image("greentown").resizable().opacity(0.7).ignoresSafeArea().overlay(
         ZStack{
             //returnTo = 3;
             let ch = s.b.room3.characters
             //VStack{
             HStack(spacing: 80){
-                playerChar;
+                playerChar();
                 ForEach(0..<ch.count, id: \.self){ k in
                     Menu{
                         ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
-                            Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: { //BREAK HERE OMETHING HAPPENED!!!!
+                            Button(s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], action: {
                                 curr_dial = s.dialogue(str: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1], c: ch[k])!;
                                 s.update(char: ch[k], option: s.options(c: ch[k])[s.options(c: ch[k]).count-i-1]);
                                 tog = true;
@@ -268,21 +228,22 @@ struct  ContentView: View {
                             );
                         }
                     } label:{
-                        Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                        Image(ch[k].img).resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color: .black, radius: 10)
                     }
                     
                 }}
             if(tog){
                 showDialogueBox(str: curr_dial);
             }
-        }
+        })
     }
    
     var room4: some View{
+        Image("bluetown").resizable().opacity(0.7).ignoresSafeArea().overlay(
         ZStack{
             let ch = s.b.room4.characters
                 HStack(spacing: 80){
-                    playerChar;
+                    playerChar();
                     ForEach(0..<ch.count, id: \.self){ k in
                         Menu{
                             ForEach(0..<s.options(c: ch[k]).count, id: \.self){ i in
@@ -295,33 +256,35 @@ struct  ContentView: View {
                                 );
                             }
                         } label:{
-                            Image(ch[k].img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                            Image(ch[k].img).resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color: .black, radius: 10)
                         }
                         
                     }
                 }
             
             if(tog){ showDialogueBox(str: curr_dial); }
-        }
+        })
     }
     
     
     
     var redRoyal: some View{
+        Image("redthrone").resizable().opacity(0.7).ignoresSafeArea().overlay(
         ZStack{
             HStack{
                 let vaultNote = s.inv.note;
-                playerChar;
+                playerChar().offset(x:-200,y:85);
+                let vn = Button{
+                    vaultNote.located();
+                    self.refresh();
+                } label:{ Image("pedestalwNote").resizable().frame(width:130, height:130).shadow(color:.black, radius: 10)}
                 if(!vaultNote.found){
-                    Button{
-                        vaultNote.located();
-                        self.refresh();
-                    } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
+                    vn.offset(x:-150, y: 60)
                 } else{
-                    Rectangle().fill(.blue).frame(width:40, height:40);
+                    Image("pedestal").resizable().frame(width:130, height:130).shadow(color:.black, radius: 10).offset(x:-150, y: 60)
                 }
                 
-                Button{
+               let mon =  Button{
                     if(!s.storyStart){
                         //diamondActivated = true;
                         tog = true;
@@ -339,54 +302,73 @@ struct  ContentView: View {
                         }
                     }
                 } label:{
-                    Image(s.b.monarch1.img).resizable().frame(width: 70.0, height: 80.0).imageScale(.small)
+                    Image(s.b.monarch1.img).resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color:.black, radius: 10)
                 }
+                mon.offset(x:190, y:-35);
                 
             }
             if(tog){
                 showDialogueBox(str: curr_dial);
             }
             
-        }
+        })
     }
     
     var lake: some View{
+        Image("lake").resizable().opacity(0.7).ignoresSafeArea().overlay(
         ZStack{
             HStack{
                 //objects found here:
                 let crown = s.inv.crown;
                 let redBerries = s.inv.redBerries;
-                playerChar;
-                Button{
+                Image("bush").resizable().frame(width:120, height:120).offset(x:-170,y:100);
+                //playerChar(x:100,y:250);
+                playerChar().offset(x:-130, y: 100);
+                
+                let crwn = Button{
                     crown.located();
                     tog = false;
                     curr_dial = ["You picked up a CROWN"]
                     tog = true;
                     self.refresh();
                 } label:{
-                    if(!crown.found){Rectangle().fill(.red).frame(width:40, height:40)}
-                    else{Rectangle().fill(.blue).frame(width:40, height:40);}
+                    Image("crown").resizable().frame(width:60, height:60).shadow(radius: 10)
+                }
+                if(!crown.found){
+                    crwn.offset(x: 120, y: 100);
+                }
+                else{
+                    Rectangle().fill(.clear).frame(width:60, height:60);
+                }
+                let rb = Button{
+                    redBerries.located();
+                    tog = false;
+                    curr_dial = ["You picked up RED BERRIES from the bush."];
+                    tog = true;
+                    self.refresh();
+                } label:{
+                    if(!redBerries.found){
+                        Image("berrybush").resizable().frame(width:120, height:120).shadow(color: .black, radius: 10);
+                        
+                    }
+                    else{
+                        Image("bush").resizable().frame(width:120, height:120);
+                    }
                 }
                 
-                if(!redBerries.found){
-                    Button{
-                        redBerries.located();
-                        tog = false;
-                        curr_dial = ["You picked up RED BERRIES from the bush."];
-                        tog = true;
-                        self.refresh();
-                    } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
-                } else{
-                    Rectangle().fill(.blue).frame(width:40, height:40);
-                }
+                Image("bush").resizable().frame(width:120, height:120).offset(x:200,y:80);
+                rb.offset(x: 120, y:100);
+                
+                
             }
             if(tog){
                 showDialogueBox(str: curr_dial)
             }
-        }
+        })
         
     }
     var caves: some View{
+        Image("forest").resizable().opacity(0.7).ignoresSafeArea().overlay(
         ZStack{
             HStack{
                 let recipe = s.inv.recipe;
@@ -398,27 +380,29 @@ struct  ContentView: View {
                 
                 //at this point, "you type in the code.... PYRO"
                 
-                playerChar;
+                playerChar().offset(x:-100,y:50);
+                let rec = Button{
+                    recipe.located();
+                    invoice.located();
+                    curr_dial = ["The cave unlocks! Inside is a...massive pile of junk.", "There's not much here. You rummage around in hopes of finding something decent.", "All you can find is a RECIPE and an INVOICE"]
+                    tog = true;
+                    self.refresh();
+                    
+                } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
                 if(!recipe.found){
-                    Button{
-                        recipe.located();
-                        invoice.located();
-                        curr_dial = ["The cave unlocks! Inside is a...massive pile of junk.", "There's not much here. You rummage around in hopes of finding something decent.", "All you can find is a RECIPE and an INVOICE"]
-                        tog = true;
-                        self.refresh();
-                        
-                    } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
+                    rec.offset(x:100,y:50)
                 } else{
-                    Rectangle().fill(.blue).frame(width:70, height:70);
+                    Rectangle().fill(.clear).frame(width:70, height:70);
                 }
             }
             if(tog){
                 showDialogueBox(str: curr_dial)
             }
-        }
+        })
     }
     
     var mountain: some View{
+        Image("mountains").resizable().opacity(0.7).ignoresSafeArea().overlay(
         HStack{
             //returnTo = 8;
             //this will be the handler of the statue but the statue is not found here.
@@ -428,19 +412,28 @@ struct  ContentView: View {
             //On placing, pedestal for statue opens and there's a chest.
             //need pedestal image.
             let chest = s.inv.chest;
-            playerChar;
-            if(!chest.found){ //CURRENTLY NOT REFRESHING PROPERLY
-                Button{
+            playerChar().offset(x: -150, y: 70);
+            
+                let base = Button{
                     chest.located();
                     self.refresh();
                     
-                } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
-            } else{
-                Rectangle().fill(.blue).frame(width:70, height:70);
+                } label:{ Image("gray pedestal").resizable().frame(width: 175, height:175).shadow(color: .black, radius: 10)}
+            let fin = Button{
+                //chest.located();
+                self.refresh();
+                
+            } label:{ Image("statueped").resizable().frame(width: 175, height:175).shadow(color: .black, radius: 10)}
+            if(!chest.found){
+                base.offset(x:150, y:40);
+                
+            }
+            else{
+                fin.offset(x:150, y:40);
             }
             //if statue completed
             //if statue found: on click statue completed. if statue completed,
-        }
+        })
     }
     
     var body: some View {
