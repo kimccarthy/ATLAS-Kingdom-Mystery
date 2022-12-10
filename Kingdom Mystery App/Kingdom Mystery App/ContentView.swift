@@ -39,38 +39,39 @@ struct  ContentView: View {
         map2;
     }
     var map2: some View{ //These will all be map image icons. For now they are color coded by city
+        Image("IMG_0206").resizable().opacity(0.7).ignoresSafeArea().overlay(
         HStack(spacing: -27){
             //red
             Group{
                 Button(action:{ page = 2 }){
-                    Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:-40);
+                    Image("redtownmap").resizable().frame(width: 90, height: 90).offset(x:0, y:-40);
                     //Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small).offset(x:0, y:-50)
                 }
-                Button{ page = 6 } label:{ Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:40); }
+                Button{ page = 6 } label:{ Image("redtownmap").resizable().frame(width: 90, height: 90).offset(x:0, y:40);}
                 
-                //Button{ if(!s.b.room2.locked){ page = 9 } }
-                Button{ if(true){ page = 9 } }label:{
-                    if(/*s.b.room2.locked*/true){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);
+                //Button{ if(){ page = 9 } }
+                Button{ if(!s.b.room2.locked){ page = 9 } }label:{
+                    if(s.b.room2.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);
                     }
-                    else{ Rectangle().fill(lochanRed).frame(width: 70, height: 70).offset(x:0, y:-40); }
+                    else{ Image("redcastlemap").resizable().frame(width: 90, height: 90).offset(x:0, y:-40); }
                 }
             }
             Spacer();
             //green
             Group{
                 //Button{ if(!s.b.room3.locked){ page = 4 } }
-                Button{ if(true){ page = 4 } }label:{
-                    if(/*s.b.room3.locked*/false){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
-                    else{ Rectangle().fill(sliavhBlue).frame(width: 70, height: 70).offset(x:0, y:40); }
+                Button{ if(!s.b.room3.locked){ page = 4 } }label:{
+                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
+                    else{ Image("bluetownmap").resizable().frame(width: 90, height: 90).offset(x:0, y:40); }
                 }
                 //Button{ if(!s.b.room3.locked){ page = 7 }}
-                Button{ if(true){ page = 8 }} label:{
-                    if(/*s.b.room3.locked*/false){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40); }
-                    else{ Rectangle().fill(sliavhBlue).frame(width: 70, height: 70).offset(x:0, y:-40); }
+                Button{ if(!s.b.room3.locked){ page = 8 }} label:{
+                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40); }
+                    else{ Image("mountainmap").resizable().frame(width: 100, height: 80).offset(x:0, y:-40); }
                 }
-                Button{ if(/*!s.b.room3.locked*/true){ page = 8 }} label:{
-                    if(/*s.b.room3.locked*/false){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
-                    else{ Rectangle().fill(sliavhBlue).frame(width: 70, height: 70).offset(x:0, y:40); }
+                Button{ if(!s.b.room3.locked){ page = 10 }} label:{
+                    if(s.b.room3.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
+                    else{ Image("bluecastlemap").resizable().frame(width: 90, height: 90).offset(x:0, y:40); }
                 }
                 
             }
@@ -78,27 +79,27 @@ struct  ContentView: View {
             Group{
                 Button{ if(!s.b.room4.locked){ page = 3 } } label:{
                     if(s.b.room4.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);}
-                    else{ Rectangle().fill(foroiseGreen).frame(width: 70, height: 70).offset(x:0, y:-40);}
+                    else{ Image("greentownmap").resizable().frame(width: 90, height: 90).offset(x:0, y:-40);}
                 }
                 Button{
                     if(!s.b.room4.locked){ page = 7 }
                 } label:{
                     if(s.b.room4.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40);}
-                    else{ Rectangle().fill(foroiseGreen).frame(width: 70, height: 70).offset(x:0, y:40); }
+                    else{ Image("forestmap").resizable().frame(width: 90, height: 90).offset(x:0, y:40);}
                 }
                 Button{
-                    if(!s.b.room4.locked){ page = 7 }
+                    if(!s.b.room4.locked){ page = 11 }
                 } label:{
                     if(s.b.room4.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:-40);}
-                    else{ Rectangle().fill(foroiseGreen).frame(width: 70, height: 70).offset(x:0, y:-40); }
+                    else{ Image("greencastlemap").resizable().frame(width: 90, height: 90).offset(x:0, y:-40); }
                 }}
             Spacer();
             Button{
                 if(!s.b.room1.locked){ page = 1 }
             } label:{ if(s.b.room1.locked){ Rectangle().fill(.gray).frame(width: 70, height: 70).offset(x:0, y:40); }
-                else{ Rectangle().fill(.brown).frame(width: 70, height: 70).offset(x:0, y:40); }
+                else{ Rectangle().fill(.brown).frame(width: 70, height: 70).offset(x:0, y:40).opacity(0); }
             }
-        }
+        })
     }
     
     @State var tog = false; //toggle dialogue box
@@ -314,6 +315,56 @@ struct  ContentView: View {
         })
     }
     
+    var blueRoyal: some View{
+        Image("bluethrone").resizable().opacity(0.7).ignoresSafeArea().overlay(
+        ZStack{
+            HStack{
+                let vaultNote = s.inv.note;
+                playerChar().offset(x:-200,y:85);
+                
+                
+               let mon =  Button{
+                        tog = true;
+                        curr_dial = s.b.monarch2.dial;
+                        self.refresh();
+                } label:{
+                    Image(s.b.monarch2.img).resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color:.black, radius: 10)
+                }
+                mon.offset(x:190, y:-35);
+                
+            }
+            if(tog){
+                showDialogueBox(str: curr_dial);
+            }
+            
+        })
+    }
+    
+    var greenRoyal: some View{
+        Image("greenthrone").resizable().opacity(0.7).ignoresSafeArea().overlay(
+        ZStack{
+            HStack{
+                let vaultNote = s.inv.note;
+                playerChar().offset(x:-200,y:85);
+                
+                
+               let mon =  Button{
+                        tog = true;
+                        curr_dial = s.b.monarch3.dial;
+                        self.refresh();
+                } label:{
+                    Image(s.b.monarch3.img).resizable().frame(width: 90.0, height: 100.0).imageScale(.small).shadow(color:.black, radius: 10)
+                }
+                mon.offset(x:190, y:-35);
+                
+            }
+            if(tog){
+                showDialogueBox(str: curr_dial);
+            }
+            
+        })
+    }
+    
     var lake: some View{
         Image("lake").resizable().opacity(0.7).ignoresSafeArea().overlay(
         ZStack{
@@ -388,11 +439,11 @@ struct  ContentView: View {
                     tog = true;
                     self.refresh();
                     
-                } label:{ Rectangle().fill(.red).frame(width:40, height:40)}
+                } label:{ Image("emptycave").resizable().frame(width: 150, height: 150);}
                 if(!recipe.found){
                     rec.offset(x:100,y:50)
                 } else{
-                    Rectangle().fill(.clear).frame(width:70, height:70);
+                    Image("fullcave").resizable().frame(width: 150, height: 150);
                 }
             }
             if(tog){
@@ -473,10 +524,10 @@ struct  ContentView: View {
             }
             else if(page==10){
                 //blueRoayl
-                redRoyal
+                blueRoyal
             }
             else if(page==11){
-                redRoyal
+                greenRoyal
             }
             
         }
