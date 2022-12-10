@@ -56,10 +56,74 @@ struct Char: Codable{
 
        static func fromJSONFile(named name: String) -> Char? {
            if let data = Data.fromJSONFile(forName: name) {
-               print("Trying: \(name)")
+               //print("Trying: \(name)")
                return fromJSON(data: data)
            }
-           print(name)
+           //print(name)
            return nil
        }
+    
+    func dialogue(str: String)-> Array<String>?{
+        //let arr:Array<String> ;
+        switch(str){
+        case "...":
+            return ["..."];
+        case "intro":
+            return intro;
+        case "initial":
+            return initial;
+        case "crown":
+            if let c = crown{
+                return c;
+            }
+        case "diamond":
+            if let d = diamond{return d;}
+        case "vaultNote":
+            if let v = vaultNote{return v;}
+        case "redberries":
+            if let r = redBerries{return r;}
+        case "greenBerries":
+            if let g = greenBerries{return g;}
+        case "disguising":
+            if let d = disguising{return d;}
+        case "priest":
+            if let p = priest{return p;}
+        case "invoice":
+            if let i = invoice{return i;}
+        case "potion":
+            if let p = potion{return p;}
+        case "recipe":
+            if let r = recipe{return r;}
+        case "caves":
+            if let c = caves{return c;}
+        default:
+            var arr = [String]();
+            arr.append(" ");
+            return arr
+        
+        }
+        var arr = [String]();
+        arr.append(" ");
+        return arr
+    }
+
+}
+
+
+class Monarch{
+    var img: String;
+    var id: Int;
+    var dial: Array<String>;
+    var acc: Array<String>?;
+    var idle: Array<String>;
+    init(i: String, d: Int, dl: Array<String>, idl: Array<String>){
+        img = i;
+        id = 0;
+        dial = dl;
+        idle = idl;
+        if(id==0){
+            acc = ["You choose to accuse? Think carefully, this cannot be undone.", "Would you like to proceed?"];
+        }
+        else{acc = nil; }
+    }
 }
