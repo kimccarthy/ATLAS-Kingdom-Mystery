@@ -47,7 +47,7 @@ struct  ContentView: View {
                     Image("redtownmap").resizable().frame(width: 90, height: 90).offset(x:0, y:-40);
                     //Image("redpanda").resizable().frame(width: 70.0, height: 80.0).imageScale(.small).offset(x:0, y:-50)
                 }
-                Button{ page = 6 } label:{ Image("redtownmap").resizable().frame(width: 90, height: 90).offset(x:0, y:40);}
+                Button{ page = 6 } label:{ Image("lakemap").resizable().frame(width: 100, height: 80).offset(x:0, y:40);}
                 
                 //Button{ if(){ page = 9 } }
                 Button{ if(!s.b.room2.locked){ page = 9 } }label:{
